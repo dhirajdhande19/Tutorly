@@ -1,0 +1,452 @@
+<% layout('layout/homeBoilerplate') %>
+
+
+
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <% if (success && success.length > 0) { %>
+  <div class="flash-message flash-success">
+    <%= success[0] %>
+    <span class="flash-close" role="button">&times;</span>
+  </div>
+<% } %>
+
+<% if (error && error.length > 0) { %>
+  <div class="flash-message flash-error">
+    <%= error[0] %>
+    <span class="flash-close" role="button">&times;</span>
+  </div>
+<% } %>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your 24/7 AI Learning Companion</h1>
+                <p class="subtitle">Instant homework help, personalized explanations, and study resources for every subject</p>
+                <div class="hero-search">
+                    <input type="text" placeholder="Ask any question or upload homework...">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-search"></i> Get Help
+                    </button>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-camera"></i> Scan Problem
+                    </button>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Subjects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10M+</span>
+                        <span class="stat-label">Questions Solved</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Accuracy Rate</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://i.pinimg.com/originals/59/34/6b/59346b4b5c80cc5cf0c483a27dfdcb36.gif" alt="Student learning with Tutorly">
+                <div class="floating-elements">
+                    <div class="floating-card math-card">
+                        <i class="fas fa-square-root-alt"></i>
+                        <span>Math Solution</span>
+                    </div>
+                    <div class="floating-card science-card">
+                        <i class="fas fa-atom"></i>
+                        <span>Science Help</span>
+                    </div>
+                    <div class="floating-card essay-card">
+                        <i class="fas fa-pen-fancy"></i>
+                        <span>Essay Review</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- AI Chat Assistant Section -->
+    <section class="ai-chat-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>AI-Powered Study Assistant</h2>
+                <p>Get instant help with any subject through our intelligent chat interface</p>
+            </div>
+            
+            <div class="chat-container">
+                <div class="chat-sidebar">
+                    <h3>Recent Chats</h3>
+                    <ul class="chat-list">
+                        <li class="chat-item active">
+                            <i class="fas fa-robot"></i>
+                            <div>
+                                <h4>Calculus Problem</h4>
+                                <p>Yesterday</p>
+                            </div>
+                        </li>
+                        <li class="chat-item">
+                            <i class="fas fa-flask"></i>
+                            <div>
+                                <h4>Chemistry Lab</h4>
+                                <p>2 days ago</p>
+                            </div>
+                        </li>
+                        <li class="chat-item">
+                            <i class="fas fa-book"></i>
+                            <div>
+                                <h4>Literature Essay</h4>
+                                <p>Last week</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="/chatroom">
+                        <button class="btn btn-outline btn-block">
+                        <i class="fas fa-plus"></i> New Chat
+                    </button>
+                    </a>
+                </div>
+                
+                <div class="chat-main">
+                    <div class="chat-header">
+                        <div class="chat-info">
+                            <div class="avatar">
+                                <img src="assets/images/ai-tutor.png" alt="AI Tutor">
+                            </div>
+                            <div>
+                                <h4>AI Tutor</h4>
+                                <p class="status">Online</p>
+                            </div>
+                        </div>
+                        <div class="chat-actions">
+                            <button class="btn btn-icon">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-messages">
+                        <div class="message bot-message">
+                            <div class="message-content">
+                                <p>Hello! I'm your AI Tutor. How can I help you with your studies today?</p>
+                            </div>
+                            <div class="message-time">10:02 AM</div>
+                        </div>
+                        
+                        <div class="message user-message">
+                            <div class="message-content">
+                                <p>Hi, I'm struggling with calculus limits. Can you explain the concept?</p>
+                            </div>
+                            <div class="message-time">10:03 AM</div>
+                        </div>
+                        
+                        <div class="message bot-message">
+                            <div class="message-content">
+                                <p>Of course! Limits are fundamental in calculus. They describe the value that a function approaches as the input approaches some value.</p>
+                                <div class="math-example">
+                                    <p>For example: lim(x→2) (x² - 4)/(x - 2) = 4</p>
+                                </div>
+                                <p>Would you like me to explain this with more examples or show step-by-step solutions?</p>
+                                <div class="message-options">
+                                    <button class="btn btn-small">More Examples</button>
+                                    <button class="btn btn-small">Step-by-Step</button>
+                                    <button class="btn btn-small">Video Explanation</button>
+                                </div>
+                            </div>
+                            <div class="message-time">10:04 AM</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input">
+                        <div class="input-tools">
+                            <button class="btn btn-icon">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <button class="btn btn-icon">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                            <button class="btn btn-icon">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                        </div>
+                        <input type="text" placeholder="Type your question here...">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Students Love Tutorly</h2>
+                <p>AI-powered features designed to make learning easier and more effective</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instant Solutions</h3>
+                    <p>Get step-by-step explanations for any problem in seconds, 24/7</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Scan Problems</h3>
+                    <p>Upload images of your homework and get instant solutions</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Personalized Help</h3>
+                    <p>AI adapts to your learning style and knowledge level</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Study Resources</h3>
+                    <p>Access to millions of practice problems and explanations</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your improvement with detailed analytics</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Tutors</h3>
+                    <p>Connect with human tutors when you need extra help</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subjects Section -->
+    <section class="subjects-section" id="subjects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Subjects We Cover</h2>
+                <p>Comprehensive support for all academic disciplines</p>
+            </div>
+            
+            <div class="subjects-tabs">
+                <button class="tab-btn active">Mathematics</button>
+                <button class="tab-btn">Science</button>
+                <button class="tab-btn">Humanities</button>
+                <button class="tab-btn">Languages</button>
+                <button class="tab-btn">Test Prep</button>
+            </div>
+            
+            <div class="subjects-content">
+                <div class="subject-category active">
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3>Algebra</h3>
+                        <p>Equations, functions, polynomials, and more</p>
+                    </div>
+                    
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-shapes"></i>
+                        </div>
+                        <h3>Geometry</h3>
+                        <p>Shapes, angles, proofs, and theorems</p>
+                    </div>
+                    
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-function"></i>
+                        </div>
+                        <h3>Calculus</h3>
+                        <p>Limits, derivatives, integrals, and series</p>
+                    </div>
+                    
+                    <div class="subject-card">
+                        <div class="subject-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Statistics</h3>
+                        <p>Probability, distributions, and data analysis</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#" class="btn btn-primary">View All Subjects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How Tutorly Works</h2>
+                <p>Get help in just a few simple steps</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Ask Your Question</h3>
+                        <p>Type, speak, or upload a photo of your problem</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Get Instant Help</h3>
+                        <p>Our AI analyzes your question and provides solutions</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Learn & Understand</h3>
+                        <p>Receive detailed explanations tailored to your level</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Practice & Improve</h3>
+                        <p>Access related exercises to master the concept</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Resources Section -->
+    <section class="resources-section" id="resources">
+        <div class="container">
+            <div class="section-header">
+                <h2>Study Resources</h2>
+                <p>Comprehensive materials to boost your learning</p>
+            </div>
+            
+            <div class="resources-tabs">
+                <button class="tab-btn active">Video Lessons</button>
+                <button class="tab-btn">Practice Problems</button>
+                <button class="tab-btn">Study Guides</button>
+                <button class="tab-btn">Cheat Sheets</button>
+            </div>
+            
+            <div class="resources-content">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="resource-card">
+                                <div class="resource-image">
+                                    <img src="assets/images/math-video-thumbnail.jpg" alt="Math Video">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                    <div class="duration">12:45</div>
+                                </div>
+                                <div class="resource-info">
+                                    <span class="subject-tag">Mathematics</span>
+                                    <h3>Understanding Calculus Limits</h3>
+                                    <p class="author">By Prof. Sarah Johnson</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>4.7 (1,203)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories</h2>
+                <p>What students say about Tutorly</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Tutorly helped me go from failing calculus to getting an A in just 3 months. The step-by-step explanations made complex concepts so much easier to understand."
+                                </p>
+                                <div class="student-info">
+                                    <img src="assets/images/student1.jpg" alt="Student" class="student-avatar">
+                                    <div>
+                                        <h4>Michael Chen</h4>
+                                        <p>University of California</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Learning?</h2>
+                <p>Join millions of students who are achieving better grades with Tutorly</p>
+                <div class="cta-buttons">
+                    <a href="/register" class="btn btn-primary btn-large">Get Started Free</a>
+                    <a href="#demo" class="btn btn-outline btn-large">See How It Works</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 

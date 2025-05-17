@@ -1,0 +1,64 @@
+<% layout('layout/chatroomBoilerplate') %>
+
+  <!-- Chatroom -->
+           <% if (success && success.length > 0) { %>
+  <div class="flash-message flash-success">
+    <%= success[0] %>
+    <span class="flash-close" role="button">&times;</span>
+  </div>
+<% } %>
+
+<% if (error && error.length > 0) { %>
+  <div class="flash-message flash-error">
+    <%= error[0] %>
+    <span class="flash-close" role="button">&times;</span>
+  </div>
+<% } %>
+  <section class="ai-chat-section" style="padding-top: 100px;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Welcome to the Chatroom</h2>
+        <p>Ask your questions in real time</p>
+      </div>
+
+      <div class="chat-container">
+        <div class="chat-sidebar">
+          <h3>Recent Chats</h3>
+          <ul class="chat-list">
+            <li class="chat-item active"><i class="fas fa-comments"></i>
+              <div>
+                <h4>General Chat</h4>
+                <p>Now</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="chat-main">
+          <div class="chat-header">
+            <div class="chat-info">
+              <div class="avatar"><img src="assets/images/ai-tutor.png" alt="AI Tutor" /></div>
+              <div>
+                <h4>AI Tutor</h4>
+                <p class="status">Online</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-messages"></div>
+
+          <div class="chat-input">
+            <div class="input-tools">
+              <button class="btn btn-icon"><i class="fas fa-paperclip"></i></button>
+              <button class="btn btn-icon"><i class="fas fa-camera"></i></button>
+              <button class="btn btn-icon"><i class="fas fa-microphone"></i></button>
+            </div>
+            <input type="text" placeholder="Type your message..." />
+            <button class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
