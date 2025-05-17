@@ -116,8 +116,6 @@ tutorly/
 
 ## 📸 Screenshots
 
-> Add screenshots of login page, registration page, dashboard, or any cool features!
-
 
 <div align="center">
       <img src="https://github.com/user-attachments/assets/1b98f6d1-7f77-42d6-b60d-2a27b170e227" width="1000" alt="Screenshot Description"/>
