@@ -69,6 +69,11 @@ app.use((req, res, next) => {
   next();
 });
 
+// Index Route
+app.get("/", (req, res) => {
+      res.render("home");
+});
+
 // Routes to Serve HTML files from views folder
 app.get("/register", (req, res) => {
   res.render("register");
