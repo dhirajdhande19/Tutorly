@@ -116,20 +116,7 @@ tutorly/
 
 ## 📸 Screenshots
 
-
-<div align="center">
-      <img src="https://github.com/user-attachments/assets/1b98f6d1-7f77-42d6-b60d-2a27b170e227" width="1000" alt="Screenshot Description"/>
-      <img src="https://github.com/user-attachments/assets/b41da996-1127-4287-a7d1-40f5565b8e07" width="1000" alt="Screenshot Description"/>
-      <img src="https://github.com/user-attachments/assets/b41da996-1127-4287-a7d1-40f5565b8e07" width="1000" alt="Screenshot Description"/>
-      <img src="https://github.com/user-attachments/assets/f6fa4158-f545-49a0-8747-f939ac9b0b88" width="1000" alt="Screenshot Description"/>
-      <img src="https://github.com/user-attachments/assets/1680cace-cc72-4555-bd32-82398b08c800" width="1000" alt="Screenshot Description"/>
-      <img src="https://github.com/user-attachments/assets/9dced6aa-a27e-43a0-83e4-df7d1c2c6c91" width="1000" alt="Screenshot Description"/>
-      <img src="https://github.com/user-attachments/assets/c9741ef5-06ce-4b27-a592-dd06abcc8ad8" width="1000" alt="Screenshot Description"/>
-      <img src="https://github.com/user-attachments/assets/00896235-6034-4a26-a88a-c09af0151a38" width="1000" alt="Screenshot Description"/>
-      <img src="https://github.com/user-attachments/assets/14d9879a-2c2e-4c26-856c-aa7d95ca3231" width="1000" alt="Screenshot Description"/>
-      <img src="https://github.com/user-attachments/assets/6fa0b10f-e819-40f9-b4be-9c83dce27e3d" width="1000" alt="Screenshot Description"/>
-
-</div>
+# Comming Soon....!!!
 
 ---
 
