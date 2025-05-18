@@ -1,24 +1,9 @@
-<% layout('layout/homeBoilerplate') %>
-
-
+<% layout('/layout/homeBoilerplate') %>
 
 
 
     <!-- Hero Section -->
     <section class="hero">
-        <% if (success && success.length > 0) { %>
-  <div class="flash-message flash-success">
-    <%= success[0] %>
-    <span class="flash-close" role="button">&times;</span>
-  </div>
-<% } %>
-
-<% if (error && error.length > 0) { %>
-  <div class="flash-message flash-error">
-    <%= error[0] %>
-    <span class="flash-close" role="button">&times;</span>
-  </div>
-<% } %>
         <div class="container">
             <div class="hero-content">
                 <h1>Your 24/7 AI Learning Companion</h1>
@@ -113,7 +98,7 @@
                     <div class="chat-header">
                         <div class="chat-info">
                             <div class="avatar">
-                                <img src="assets/images/ai-tutor.png" alt="AI Tutor">
+                                <img src="https://raw.githubusercontent.com/dhirajdhande19/Tutorly/8bd1eec02c397f7071ddf30d81f1beb15c50cf05/AI_Tutor_Bot.jpg" alt="AI Tutor">
                             </div>
                             <div>
                                 <h4>AI Tutor</h4>
@@ -419,7 +404,7 @@
                                     "Tutorly helped me go from failing calculus to getting an A in just 3 months. The step-by-step explanations made complex concepts so much easier to understand."
                                 </p>
                                 <div class="student-info">
-                                    <img src="assets/images/student1.jpg" alt="Student" class="student-avatar">
+                                    <img src="https://raw.githubusercontent.com/dhirajdhande19/Tutorly/refs/heads/main/Student_pic.jpg" alt="Student" class="student-avatar">
                                     <div>
                                         <h4>Michael Chen</h4>
                                         <p>University of California</p>

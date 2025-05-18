@@ -1,0 +1,23 @@
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo"><i class="fas fa-graduation-cap"></i><span>Tutorly</span></div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/chatroom" class="active">Chatroom</a></li>
+        </ul>
+      </nav>
+            <div class="auth-buttons">
+                <% if(!currUser) { %>
+                <a href="/login" class="btn btn-outline">Login</a>
+                <a href="/register" class="btn btn-primary">Get Started</a>
+                <% } %> <% if(currUser) { %>
+                <a href="/logout" id="logoutBtn" class="btn btn-outline-danger fw-semibold">
+                    <i class="fas fa-sign-out-alt me-1"></i> Logout</a>
+                <% } %>
+            </div>
+      <button class="dark-mode-toggle"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button>
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>

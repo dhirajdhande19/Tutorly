@@ -24,8 +24,6 @@ async function main() {
   await mongoose.connect(process.env.MONGO_URL);
 };
 
-// Middleware to parse form and JSON dat
-// app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // to accept data from form 
 
 // Serve static assets (CSS, JS, images)
@@ -71,28 +69,33 @@ app.use((req, res, next) => {
 
 // Index Route
 app.get("/", (req, res) => {
-      res.render("home");
+    res.redirect("/home");
 });
 
 // Routes to Serve HTML files from views folder
 app.get("/register", (req, res) => {
-  res.render("register");
+  res.render("pages/register");
 });
   
 app.get('/login', (req, res) => {
-  res.render("login");
+  res.render("pages/login");
 });
 
 app.get('/home', (req, res) => {
-    res.render("home");
+    res.render("pages/home");
 });
  
+
+app.get("/test", (req, res) => {
+  req.flash("success", "You did it");
+  res.redirect("/home");
+});
 
 // just use isLoggedIn middleware to restrict user for 
 // doing somthing (any work) if he's not logged in  !
 
 app.get('/chatroom',isLoggedIn, (req, res) => {
-    res.render("chatroom");
+    res.render("pages/chatroom");
 });
 
 app.get("/logout", (req, res, next) => {
@@ -105,45 +108,21 @@ app.get("/logout", (req, res, next) => {
   });
 });
 
-// to test flash
-
-// app.get('/test-flash', (req, res) => {
-//   req.flash('error', 'Flash is working!');
-//   res.redirect('/home');
-// });
-
-// DEMO example for checking if passport is working okay
-
-// app.get("/demouser", async (req, res) => {
-//   let fakeuser = new User({
-//     email: "student@gmail.com",
-//     username: "delta-student",
-//   });
-
-//   let registeredUser = await User.register(fakeuser, "helloworld");
-//   res.send(registeredUser);
-// });
-
-
 
 // API routes
 
 // Register route/API
 app.use("/", authRoutes); 
 
-// app.post("/login")
 
 
 app.all(/.*/, (req, res, next) => {
   next(new ExpressError(404, "Page Not Found"));
-    // res.render("error.ejs");
 });
 
 app.use((err, req, res, next) => {
   let { statusCode=500, message="Something went wrong!" } = err;
-  res.status(statusCode).render("error.ejs", { message });
-  // res.status(statusCode).send(message);
-// res.send("Something went wrong!");
+  res.status(statusCode).render("pages/error", { message }); // render new error page here
 });
 
 

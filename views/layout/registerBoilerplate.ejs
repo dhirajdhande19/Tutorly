@@ -13,117 +13,17 @@
     <link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
-    <!-- Header with Navigation -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-graduation-cap"></i>
-                <span>Tutorly</span>
-            </div>
-            
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="/home#features">Features</a></li>
-                    <li><a href="/home#subjects">Subjects</a></li>
-                    <li><a href="/home#resources">Resources</a></li>
-                    <li><a href="/home#testimonials">Success Stories</a></li>
-                </ul>
-            </nav>
-            
-            <div class="auth-buttons">
-                <% if(!currUser) { %>
-                <a href="/login" class="btn btn-outline">Login</a>
-                <a href="/register" class="btn btn-primary">Get Started</a>
-                <% } %> <% if(currUser) { %>
-                <a href="/logout" id="logoutBtn" class="btn btn-outline-danger fw-semibold">
-                    <i class="fas fa-sign-out-alt me-1"></i> Logout</a>
-                <% } %>
-            </div>
-            
-            <button class="dark-mode-toggle">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun"></i>
-            </button>
-            
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
-
-      <!-- Main content -->
-        <%- body %>
+    
+    <!-- Header with Navbar Section -->
+    <%- include("../includes/navbar.ejs") %>
 
 
- <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="logo">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Tutorly</span>
-                    </div>
-                    <p>AI-powered learning companion helping students succeed in their academic journey.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Study Guides</a></li>
-                        <li><a href="#">Practice Tests</a></li>
-                        <li><a href="#">Webinars</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">GDPR</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> support@tutorly.com</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Learning St, Edu City</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>© 2023 Tutorly. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#">Sitemap</a>
-                    <a href="#">Accessibility</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Flash and Main Content Here -->
+    <%- include("../includes/flash.ejs") %><%- body %>
+
+
+    <!-- Footer Section -->
+    <%- include("../includes/footer.ejs") %>
 
     <!-- Main JS -->
     <script src="/js/register.js"></script>

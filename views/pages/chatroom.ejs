@@ -1,19 +1,6 @@
 <% layout('layout/chatroomBoilerplate') %>
 
   <!-- Chatroom -->
-           <% if (success && success.length > 0) { %>
-  <div class="flash-message flash-success">
-    <%= success[0] %>
-    <span class="flash-close" role="button">&times;</span>
-  </div>
-<% } %>
-
-<% if (error && error.length > 0) { %>
-  <div class="flash-message flash-error">
-    <%= error[0] %>
-    <span class="flash-close" role="button">&times;</span>
-  </div>
-<% } %>
   <section class="ai-chat-section" style="padding-top: 100px;">
     <div class="container">
       <div class="section-header">
