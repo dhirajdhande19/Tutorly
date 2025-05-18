@@ -52,13 +52,17 @@ Create a `.env` file in the root directory and add:
 
 ```env
 MONGO_URL=your_mongo_connection_string 
-SECRET="mySuperSecretCodeForThisProject"
+SECRET="your_seecret_code"
 ```
 
 ### 4️⃣ Start the Server
 
 ```bash
-npm start
+node server.js 
+```
+or 
+```bash
+nodemon server.js 
 ```
 
 🔗 Then open your browser at: `http://localhost:8080`
