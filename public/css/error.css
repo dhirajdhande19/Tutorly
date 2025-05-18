@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #1a2a44 0%, #0f1a2b 100%);
+    overflow: hidden;
+    color: #fff;
+    position: relative;
+}
+
+/* Forest Library Background */
+.forest-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent);
+    z-index: 1;
+    animation: subtleGlow 12s infinite ease-in-out;
+}
+
+/* Falling Leaves */
+.leaves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.leaf {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(138, 255, 173, 0.3);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    animation: fall 10s infinite linear;
+    opacity: 0.5;
+}
+
+.leaf:nth-child(1) { left: 10%; top: -10%; animation-delay: 0s; }
+.leaf:nth-child(2) { left: 30%; top: -20%; animation-delay: 2s; }
+.leaf:nth-child(3) { left: 50%; top: -15%; animation-delay: 4s; }
+.leaf:nth-child(4) { left: 70%; top: -25%; animation-delay: 6s; }
+.leaf:nth-child(5) { left: 90%; top: -10%; animation-delay: 8s; }
+
+/* Error Container */
+.error-container {
+    text-align: center;
+    padding: 40px;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 3;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.error-code {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 110px;
+    font-weight: 700;
+    color: #8affa9;
+    text-shadow: 0 0 20px rgba(138, 255, 173, 0.5);
+    margin-bottom: 15px;
+    animation: pulseGlow 2.5s infinite alternate;
+}
+
+.error-message {
+    font-size: 30px;
+    font-weight: 500;
+    color: #e0e0ff;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.error-description {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    margin-bottom: 35px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Buttons */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 35px;
+    background: linear-gradient(45deg, #8affa9, #5ad8a6);
+    color: #1a2a44;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(138, 255, 173, 0.4);
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(138, 255, 173, 0.6);
+    background: linear-gradient(45deg, #5ad8a6, #8affa9);
+}
+
+.btn i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 2px solid #8affa9;
+    color: #8affa9;
+    box-shadow: none;
+}
+
+.btn.secondary:hover {
+    background: rgba(138, 255, 173, 0.15);
+    border-color: #5ad8a6;
+    color: #5ad8a6;
+    box-shadow: 0 8px 25px rgba(138, 255, 173, 0.4);
+}
+
+/* Floating Scrolls */
+.floating-scrolls {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.scroll {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    color: #e0e0ff;
+    font-size: 15px;
+    animation: floatScroll 9s infinite ease-in-out;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll:hover {
+    transform: scale(1.15) translateY(-6px);
+    box-shadow: 0 0 25px rgba(138, 255, 173, 0.5);
+}
+
+.scroll i {
+    font-size: 20px;
+    color: #8affa9;
+}
+
+.math-scroll { top: 10%; left: 8%; animation-duration: 8s; }
+.science-scroll { top: 65%; right: 10%; animation-duration: 10s; }
+.essay-scroll { top: 35%; left: 75%; animation-duration: 7s; }
+
+/* Animations */
+@keyframes subtleGlow {
+    0%, 100% { opacity: 0.05; }
+    50% { opacity: 0.1; }
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100vh) rotate(0deg); opacity: 0.5; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0.2; }
+}
+
+@keyframes pulseGlow {
+    0% { text-shadow: 0 0 20px rgba(138, 255, 173, 0.5); }
+    100% { text-shadow: 0 0 30px rgba(138, 255, 173, 0.7); }
+}
+
+@keyframes floatScroll {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .error-container {
+        padding: 30px;
+        max-width: 90%;
+    }
+
+    .error-code {
+        font-size: 90px;
+    }
+
+    .error-message {
+        font-size: 26px;
+    }
+
+    .error-description {
+        font-size: 15px;
+    }
+
+    .btn {
+        padding: 12px 28px;
+        font-size: 15px;
+    }
+
+    .scroll {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .error-code {
+        font-size: 70px;
+    }
+
+    .error-message {
+        font-size: 22px;
+    }
+
+    .error-description {
+        font-size: 14px;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

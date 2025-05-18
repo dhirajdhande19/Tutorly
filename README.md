@@ -35,7 +35,7 @@ It features authentication, session management, dynamic rendering, and prepares 
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone git clone [https://github.com/your-username/tutorly.git](https://github.com/dhirajdhande19/Tutorly.git)
+git clone [https://github.com/your-username/tutorly.git]
 cd tutorly
 ````
 
@@ -47,6 +47,7 @@ npm install
 
 ### 3️⃣ Set Up Environment Variables
 
+Arsheet, Nebin msg me i'll send .env file
 Create a `.env` file in the root directory and add:
 
 ```env
@@ -77,7 +78,8 @@ tutorly/
 │
 ├── public/
 │   ├── css/                    # CSS stylesheets
-│   └── js/                     # Client-side JavaScript
+│   ├── js/                     # Client-side JavaScript
+|   └── images/                 # Images                  
 |
 ├── routes/
 │   └── authRoutes.js           # Routes for login, register, logout
@@ -87,9 +89,13 @@ tutorly/
 │   └── wrapAsync.js            # Utility for async error handling
 │
 ├── views/
-│   ├── error.ejs               # Error page
+│   
 │   ├── includes/
-│   │   └── flash.ejs           # Flash messages partial
+│   │   ├── navbar.ejs
+│   │   ├── flash.ejs
+│   │   ├── chatroomHeader.ejs
+│   │   └── footer.ejs          
+│   │   
 │   └── layout/
 │   │    ├── loginBoilerplate.ejs
 │   │    ├── registerBoilerplate.ejs
@@ -99,7 +105,7 @@ tutorly/
 │   │
 │   └──pages/                    # EJS Files
 │        ├── chatroom.ejs
-│        ├── error.ejs
+│        ├── error.ejs            
 │        ├── home.ejs
 │        ├── login.ejs
 │        └── register.ejs
@@ -107,9 +113,10 @@ tutorly/
 │
 ├── middlewares.js             # Custom middleware functions
 ├── server.js                  # Entry point of the app
-├── .env                       # Environment variables (not committed)
 ├── .gitignore                 # Ignored files/folders
 └── README.md                  # You're here now!
+│.....
+
 ```
 
 ---
