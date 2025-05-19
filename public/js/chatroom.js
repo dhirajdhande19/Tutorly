@@ -38,10 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 800);
     };
 
-    sendBtn.addEventListener('click', sendMessage);
-    input.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') sendMessage();
-    });
+    if (sendBtn && input) {
+        sendBtn.addEventListener('click', sendMessage);
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    } else {
+        console.error('Chat input or send button not found. Check your HTML structure and selectors.');
+    }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
