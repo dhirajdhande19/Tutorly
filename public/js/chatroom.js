@@ -7,26 +7,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollToBottom = () => {
     chatBox.scrollTop = chatBox.scrollHeight;
   };
-  // Function to animate the message
-  const animateMessage = (el) => {
-    el.classList.add('slide-in');
-    setTimeout(() => el.classList.remove('slide-in'), 600);
-  };
-  // Creates the message element
-  const createMessage = (type, text) => {
-    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    const div = document.createElement('div');
-    div.className = `message ${type}-message`;
-    div.innerHTML = `
-      <div class="message-content">
-        <p>${text}</p>
-      </div>
-      <div class="message-time">${time}</div>
-    `;
-    animateMessage(div);
-    chatBox.appendChild(div);
-    scrollToBottom();
-  };
+// Function to animate the message
+const animateMessage = (el) => {
+  el.classList.add('slide-in');
+  setTimeout(() => el.classList.remove('slide-in'), 600);
+};
+
+// Function to create and display a message
+const createMessage = (type, text) => {
+  const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const div = document.createElement('div');
+  div.className = `message ${type}-message`;
+  div.innerHTML = `
+    <div class="message-content">
+      <p>${text}</p>
+    </div>
+    <div class="message-time">${time}</div>
+  `;
+  animateMessage(div);
+  chatBox.appendChild(div);
+  scrollToBottom();
+};
 
   // Openrouter API Key
   const OPENROUTER_API_KEY = ''; // Add the Key here
