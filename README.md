@@ -25,7 +25,7 @@ It features secure authentication, session management, dynamic rendering, and is
 
 - **Arsheet**  
   *Frontend Developer*  
-  [GitHub](https://github.com/Arsheetkaur) | [LinkedIn](https://linkedin.com/in/arsheet)
+  [GitHub](https://github.com/Arsheetkaur) | [LinkedIn](/#)
 
 - **Dhiraj**  
   *Backend Developer*  
@@ -145,11 +145,11 @@ Check out the deployed version here: [Tutorly Live Site](https://tutorly-jyu9.on
 
 | Home Page | Chatroom | Register | Login |
 |-----------|----------|----------|-------|
-| ![Home](./screenshots/home.png) | ![Chatroom](./screenshots/chatroom.png) | ![Register](./screenshots/login.png) | ![Login](./screenshots/login.png) |
+| ![Home Page](screenshots/home_page.png) | ![Chatroom Page](screenshots/chatroom_page.png) | ![Register Page](screenshots/register_page.png) | ![Login Page](screenshots/login_page.png) |
 
 > 📌 *Note: Screenshots are from the beta version and will evolve as we improve the platform.*
 
-
+| ![](screenshots/home.png) | ![](screenshots/chatroom.png) | ![](screenshots/login.png) |
 ---
 
 ## ✨ Features
