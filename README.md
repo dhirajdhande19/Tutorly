@@ -149,7 +149,6 @@ Check out the deployed version here: [Tutorly Live Site](https://tutorly-jyu9.on
 
 > 📌 *Note: Screenshots are from the beta version and will evolve as we improve the platform.*
 
-| ![](screenshots/home.png) | ![](screenshots/chatroom.png) | ![](screenshots/login.png) |
 ---
 
 ## ✨ Features
