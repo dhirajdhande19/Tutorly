@@ -1,7 +1,8 @@
-## 📚 Tutorly
+## 📚 Tutorly – Beta Version  
 
-An all-in-one tutoring platform that connects students with tutors through a modern, responsive web interface.  
-It features authentication, session management, dynamic rendering, and prepares for AI integration. 🧠✨
+
+Tutorly is an all-in-one tutoring platform connecting students with tutors through a modern, responsive web interface. 
+It features secure authentication, session management, dynamic rendering, and is built with AI integration in mind. 🧠✨
 
 ---
 
@@ -21,51 +22,59 @@ It features authentication, session management, dynamic rendering, and prepares 
 ---
 
 ## 👨‍💻 Authors
- 
-- **Arsheet** – Frontend Developer 
-- **Dhiraj** – Backend Developer  
-- **Nebin** – AI Integration Lead
+
+- **Arsheet**  
+  *Frontend Developer*  
+  [GitHub](https://github.com/Arsheetkaur) | [LinkedIn](https://linkedin.com/in/arsheet)
+
+- **Dhiraj**  
+  *Backend Developer*  
+  [GitHub](https://github.com/dhirajdhande19) | [LinkedIn](www.linkedin.com/in/dhiraj-dhande-1a7262237)
+
+- **Nebin**  
+  *AI Integration Lead*  
+  [GitHub](https://github.com/neb1n) | [LinkedIn](https://www.linkedin.com/in/nebin-babu-417a03353)
 
 > 💬 Built with teamwork, late nights, and way too much console logging. 😂
 
 ---
 
-## 🛠️ Getting Started
+<details>
+<summary>🛠️ Local Setup Instructions (Optional)</summary>
+
+<br/>
 
 ### 1️⃣ Clone the Repository
 
-```bash
-git clone [https://github.com/your-username/tutorly.git]
+````bash
+git clone https://github.com/your-username/tutorly.git
 cd tutorly
 ````
 
 ### 2️⃣ Install Dependencies
-
-```bash
+````bash
 npm install
-```
+````
 
 ### 3️⃣ Set Up Environment Variables
+Create a .env file in the root directory and add:
 
-Arsheet, Nebin msg me i'll send .env file
-Create a `.env` file in the root directory and add:
+````bash
+MONGO_URL=your_mongo_connection_string        
+SECRET="your_secret_code"
+````
 
-```env
-MONGO_URL=your_mongo_connection_string 
-SECRET="your_seecret_code"
-```
+### 4️⃣ Run the Server
 
-### 4️⃣ Start the Server
+````bash
+nodemon server.js
+````
+Then open your browser at:
+ ````bash 
+ http://localhost:2000
+````
 
-```bash
-node server.js 
-```
-or 
-```bash
-nodemon server.js 
-```
-
-🔗 Then open your browser at: `http://localhost:8080`
+</details>
 
 ---
 
@@ -125,12 +134,41 @@ tutorly/
 
 ---
 
-## 📸 Screenshots
+## 🌍 Live Demo
 
-# Comming Soon....!!!
+Check out the deployed version here: [Tutorly Live Site](https://tutorly-jyu9.onrender.com)
+
 
 ---
 
+## 📸 Screenshots
+
+| Home Page | Chatroom | Register | Login |
+|-----------|----------|----------|-------|
+| ![Home](./screenshots/home.png) | ![Chatroom](./screenshots/chatroom.png) | ![Register](./screenshots/login.png) | ![Login](./screenshots/login.png) |
+
+> 📌 *Note: Screenshots are from the beta version and will evolve as we improve the platform.*
+
+
+---
+
+## ✨ Features
+
+- 🔐 Authentication (Register/Login)
+- 👥 Real-time Chatroom (coming soon / in progress)
+- 📄 Dynamic EJS Templating
+- 🧠 AI Assistant (under development)
+- ⚙️ Error Handling and Flash Messaging
+
+---
+
+## 🚧 Upcoming Improvements
+
+- Real-time chatroom using Socket.io
+- AI tutor assistant integration
+- Responsive mobile-first layout
+
+---
 ## 📌 Notes
 
 * Don't commit your `.env` file! It's ignored by `.gitignore`.
@@ -143,5 +181,4 @@ Star it ⭐ | Fork it 🍴 | Share it 💬
 
 We’re continuously improving — contributions and feedback are welcome!
 
-````
 
