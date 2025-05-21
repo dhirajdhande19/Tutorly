@@ -1,4 +1,7 @@
-require("dotenv").config();
+if(process.env.NODE_ENV != "production") {
+    require('dotenv').config();
+}
+
 const express = require("express");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
@@ -7,6 +10,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/User");
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const ExpressError = require("./utils/ExpressError");
 const ejsMate = require("ejs-mate");
@@ -15,14 +19,18 @@ const {isLoggedIn} = require("./middlewares");
 const app = express();
 
 
+const dbUrl = process.env.ATLASDB_URL;
+
+
 // MongoDB Connection 
 main()
 .then(() => console.log("DB Connected"))
 .catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect(process.env.MONGO_URL);
+  await mongoose.connect(dbUrl);
 };
+
 
 app.use(express.urlencoded({ extended: true })); // to accept data from form 
 
@@ -30,8 +38,21 @@ app.use(express.urlencoded({ extended: true })); // to accept data from form
 app.use(express.static(path.join(__dirname, "public")));
 
 
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  crypto: {
+    secret: process.env.SECRET,
+  },
+  touchAfter: 24 * 3600,
+});
+
+store.on("error", () => {
+  console.log("ERROR IN MONGO SESSION STORE", err);
+});
+
 // Session Implementation
 const sessionOptions = {
+  store,
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
@@ -43,6 +64,7 @@ const sessionOptions = {
     httpOnly: true, // to prevent from CrossScripting attack 
   },
 };
+
 
 app.set("view engine", "ejs"); // Enable EJS
 app.engine('ejs', ejsMate);
@@ -127,6 +149,6 @@ app.use((err, req, res, next) => {
 
 
 // Start Server
-app.listen(8080, () => {
-    console.log("Server listening to 8080");
+app.listen(2000, () => {
+    console.log("Server listening to 2000");
 });
