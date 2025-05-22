@@ -25,7 +25,7 @@ It features secure authentication, session management, dynamic rendering, and is
 
 - **Arsheet**  
   *Frontend Developer*  
-  [GitHub](https://github.com/Arsheetkaur) | [LinkedIn](/#)
+  [GitHub](https://github.com/Arsheetkaur) | [LinkedIn](https://www.linkedin.com/in/arsheet-kaur-94b207346)
 
 - **Dhiraj**  
   *Backend Developer*  
