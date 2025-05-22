@@ -1,56 +1,5 @@
 <% layout('/layout/homeBoilerplate') %>
 
-
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tutorly - AI-powered homework help and study companion. Get instant solutions, explanations, and learning resources for any subject, anytime.">
-    <title>Tutorly - AI Learning Companion</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="home.css">
-</head>
-<body>
-    <!-- Header with Navigation -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-graduation-cap"></i>
-                <span>Tutorly</span>
-            </div>
-            
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="home.html" class="active">Home</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#subjects">Subjects</a></li>
-                    <li><a href="#resources">Resources</a></li>
-                    <li><a href="#testimonials">Success Stories</a></li>
-                </ul>
-            </nav>
-            
-            <div class="auth-buttons">
-                <a href="login.html" class="btn btn-outline">Login</a>
-                <a href="register.html" class="btn btn-primary">Get Started</a>
-            </div>
-            
-            <button class="dark-mode-toggle">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun"></i>
-            </button>
-            
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -138,16 +87,18 @@
                             </div>
                         </li>
                     </ul>
-                    <button class="btn btn-outline btn-block">
-                        <i class="fas fa-plus"></i> New Chat
-                    </button>
+                    <a href="/chatroom">
+                        <button class="btn btn-outline btn-block">
+                            <i class="fas fa-plus"></i> New Chat
+                        </button>
+                    </a>
                 </div>
                 
                 <div class="chat-main">
                     <div class="chat-header">
                         <div class="chat-info">
                             <div class="avatar">
-                                <img src="C:\Users\arshe\Tutorly-1\public\images\AI_Tutor_Bot.jpg" alt="AI Tutor">
+                                <img src="/images/AI_Tutor_Bot.jpg" alt="AI Tutor">
                             </div>
                             <div>
                                 <h4>AI Tutor</h4>
@@ -398,7 +349,7 @@
                         <div class="swiper-slide">
                             <div class="resource-card">
                                 <div class="resource-image">
-                                    <img src=" public/images/Maths-thumbnail.jpg" alt="Math Video">
+                                    <img src=" /images/Maths-thumbnail.jpg" alt="Math Video">
                                     <div class="play-button">
                                         <i class="fas fa-play"></i>
                                     </div>
@@ -453,7 +404,7 @@
                                     "Tutorly helped me go from failing calculus to getting an A in just 3 months. The step-by-step explanations made complex concepts so much easier to understand."
                                 </p>
                                 <div class="student-info">
-                                    <img src="public\images\Student_pic.jpg" alt="Student" class="student-avatar">
+                                    <img src="/images/Student_pic.jpg" alt="Student" class="student-avatar">
                                     <div>
                                         <h4>Michael Chen</h4>
                                         <p>University of California</p>
@@ -476,83 +427,10 @@
                 <h2>Ready to Transform Your Learning?</h2>
                 <p>Join millions of students who are achieving better grades with Tutorly</p>
                 <div class="cta-buttons">
-                    <a href="register.html" class="btn btn-primary btn-large">Get Started Free</a>
+                    <a href="/register" class="btn btn-primary btn-large">Get Started Free</a>
                     <a href="#demo" class="btn btn-outline btn-large">See How It Works</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="logo">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Tutorly</span>
-                    </div>
-                    <p>AI-powered learning companion helping students succeed in their academic journey.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="press.html">Press</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="help-center.html">Help Center</a></li>
-                        <li><a href="study-guides.html">Study Guides</a></li>
-                        <li><a href="practice-tests.html">Practice Tests</a></li>
-                        <li><a href="webinars.html">Webinars</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">GDPR</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> support@tutorly.com</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Learning St, Edu City</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>© 2023 Tutorly. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="sitemap.html">Sitemap</a>
-                    <a href="accessibility.html">Accessibility</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Main JS -->
-    <script src="homepage.js"></script>
-</body>
-</html>
