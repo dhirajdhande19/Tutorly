@@ -54,15 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollToBottom();
     };
 
-    // Add AI API response using openrouter.ai
+    // OPENROUTER.AI API Integration
     async function fetchAIResponse(userMessage) {
         try {
+            // Make sure OPENROUTER_API_KEY is put in around here
+            // const apiKey = window.OPENROUTER_API_KEY || ''; change this I don't know how you do it.
             const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    // Replace 'YOUR_API_KEY' with your actual OpenRouter API key
-                    'Authorization': 'Bearer ${OPENROUTER_API_KEY}'
+                    'Authorization': `Bearer ${apiKey}`
                 },
                 body: JSON.stringify({
                     model: 'openai/gpt-3.5-turbo',
