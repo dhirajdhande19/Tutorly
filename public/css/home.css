@@ -812,6 +812,21 @@ img {
 .resource-card:hover .resource-image img {
     transform: scale(1.05);
 }
+.video-thumbnail {
+    position: relative;
+    width: 300px; /* You can also use % or responsive units */
+    height: 300px; /* Ensures a perfect square */
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents distortion, keeps it pretty */
+    border-radius: 16px;
+}
 
 .play-button {
     position: absolute;
@@ -1257,91 +1272,323 @@ body.dark-mode {
         gap: 10px;
         text-align: center;
     }
-    /* Chat Message Animation */
-    .message {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.4s ease;
-    }
-
-    .message.slide-in {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
 }
 
-.flash-message {
-  position: fixed;
-  top: 90px; /* increased from 20px to 80px */
-  left: 50%;
-  transform: translateX(-50%) translateY(-30px);
-  opacity: 0;
-  z-index: 9999;
-  background-color: #28a745; /* green for success */
-  color: #fff;
-  padding: 16px 40px 16px 20px;
-  border-radius: 6px;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  animation: slideFadeIn 0.5s ease-out forwards;
-  max-width: 90%;
-  width: max-content;
+
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212; /* Dark background to replace #fff */
+    color: var(--light-color); /* Use light-color (#f8f9fa) for general text */
 }
 
-.flash-error {
-  background-color: #dc3545;
+/* Header */
+.dark-mode .header {
+    background-color: #1e1e1e; /* Dark card background */
+    color: var(--light-color);
 }
 
-.flash-close {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  font-size: 22px;
-  font-weight: bold;
-  color: #fff;
-  cursor: pointer;
-  user-select: none;
+.dark-mode .header .logo,
+.dark-mode .header .logo i,
+.dark-mode .header nav a,
+.dark-mode .header .auth-buttons a,
+.dark-mode .header .mobile-menu-btn {
+    color: var(--light-color); /* Ensure logo and nav links are visible */
 }
 
-@keyframes slideFadeIn {
-  from {
-    transform: translateX(-50%) translateY(-30px);
+.dark-mode .header nav a.active::after,
+.dark-mode .header nav a:hover::after {
+    background-color: var(--primary-color); /* Keep vibrant primary color */
+}
+
+.dark-mode .header .btn-outline {
+    border-color: var(--light-color);
+    color: var(--light-color);
+}
+
+.dark-mode .header .btn-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Hero Section */
+.dark-mode .hero {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%); /* Dark gradient to replace light one */
+    color: var(--light-color);
+}
+
+.dark-mode .hero h1 {
+    color: var(--light-color); /* Replace --dark-color with light-color */
+}
+
+.dark-mode .hero .subtitle,
+.dark-mode .hero-stats .stat-label {
+    color: var(--gray-color); /* Maintain gray for subtitles */
+}
+
+.dark-mode .hero-stats .stat-number {
+    color: var(--primary-color); /* Keep vibrant primary color */
+}
+
+.dark-mode .hero-search {
+    background-color: #1e1e1e;
+    box-shadow: var(--box-shadow);
+}
+
+.dark-mode .hero-search input {
+    background-color: #2a2a2a;
+    color: var(--light-color);
+    border: none;
+}
+
+.dark-mode .hero-search .btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.dark-mode .hero-search .btn-secondary {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.dark-mode .floating-card {
+    background-color: #2a2a2a; /* Darker card background */
+    color: var(--light-color);
+}
+
+.dark-mode .math-card {
+    background-color: #2a3a5f; /* Slightly darker version of #e9f5ff */
+    color: var(--primary-color);
+}
+
+.dark-mode .science-card {
+    background-color: #2f2a4a; /* Slightly darker version of #f0e9ff */
+    color: var(--secondary-color);
+}
+
+.dark-mode .essay-card {
+    background-color: #2a4a3a; /* Slightly darker version of #e9fff0 */
+    color: #2ecc71;
+}
+
+/* AI Chat Section */
+.dark-mode .ai-chat-section {
+    background-color: #1a1a1a; /* Dark section background */
+}
+
+.dark-mode .chat-container,
+.dark-mode .chat-sidebar,
+.dark-mode .chat-main,
+.dark-mode .feature-card,
+.dark-mode .subject-card,
+.dark-mode .testimonial-card,
+.dark-mode .resource-card {
+    background-color: #1e1e1e; /* Consistent dark card background */
+    color: var(--light-color);
+}
+
+.dark-mode .chat-sidebar h3,
+.dark-mode .chat-sidebar .chat-item p,
+.dark-mode .chat-header .status,
+.dark-mode .author,
+.dark-mode .rating span {
+    color: var(--gray-color); /* Maintain gray for secondary text */
+}
+
+.dark-mode .chat-sidebar .chat-item.active {
+    background-color: #2a3a5f; /* Darker version of #e0e7ff */
+}
+
+.dark-mode .chat-sidebar .chat-item:hover {
+    background-color: #2a2a2a; /* Darker version of --light-gray */
+}
+
+.dark-mode .chat-item i {
+    color: var(--primary-color); /* Keep vibrant icon color */
+}
+
+.dark-mode .chat-header {
+    border-bottom: 1px solid #2a2a2a; /* Darker border */
+}
+
+.dark-mode .chat-messages .bot-message .message-content {
+    background-color: #2a3a5f; /* Darker version of #f5f7ff */
+    color: var(--light-color);
+}
+
+.dark-mode .chat-messages .user-message .message-content {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.dark-mode .chat-input input {
+    background-color: #2a2a2a;
+    color: var(--light-color);
+    border: 1px solid #2a2a2a;
+}
+
+.dark-mode .chat-input .btn-icon {
+    background-color: #2a2a2a;
+    color: var(--gray-color);
+}
+
+.dark-mode .chat-input .btn-icon:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Features Section */
+.dark-mode .features-section .section-header h2,
+.dark-mode .subjects-section .section-header h2,
+.dark-mode .how-it-works .section-header h2,
+.dark-mode .resources-section .section-header h2,
+.dark-mode .testimonials-section .section-header h2,
+.dark-mode .cta-content h2,
+.dark-mode .footer-col h3 {
+    color: white; /* Bright headings for vibrancy */
+}
+
+.dark-mode .features-section .section-header p,
+.dark-mode .subjects-section .section-header p,
+.dark-mode .how-it-works .section-header p,
+.dark-mode .resources-section .section-header p,
+.dark-mode .testimonials-section .section-header p,
+.dark-mode .feature-card p,
+.dark-mode .subject-card p,
+.dark-mode .step-content p,
+.dark-mode .resource-info p,
+.dark-mode .testimonial-card p,
+.dark-mode .cta-content p {
+    color: var(--gray-color); /* Maintain gray for secondary text */
+}
+
+.dark-mode .feature-icon {
+    background-color: #2a3a5f; /* Darker version of #e0e7ff */
+    color: var(--primary-color);
+}
+
+/* Subjects Section */
+.dark-mode .subjects-tabs .tab-btn {
+    background-color: #2a2a2a;
+    color: var(--light-color);
+}
+
+.dark-mode .subjects-tabs .tab-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.dark-mode .subject-icon {
+    background-color: #2a3a5f; /* Darker version of #e0e7ff */
+    color: var(--primary-color);
+}
+
+/* How It Works Section */
+.dark-mode .how-it-works {
+    background-color: #1a1a1a;
+}
+
+.dark-mode .steps-container::before {
+    background-color: #2a2a2a;
+}
+
+.dark-mode .step-number {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Resources Section */
+.dark-mode .resource-image {
+    background-color: #1e1e1e;
+}
+
+.dark-mode .play-button {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--primary-color);
+}
+
+.dark-mode .duration {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.dark-mode .subject-tag {
+    background-color: #2a3a5f; /* Darker version of #e0e7ff */
+    color: var(--primary-color);
+}
+
+.dark-mode .resources-tabs .tab-btn {
+    background-color: #2a2a2a;
+    color: var(--light-color);
+}
+
+.dark-mode .resources-tabs .tab-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.dark-mode .rating i {
+    color: #ffc107; /* Keep star color vibrant */
+}
+
+/* Testimonials Section */
+.dark-mode .testimonial-text {
+    color: var(--light-color); /* Replace --dark-color */
+}
+
+/* CTA Section */
+.dark-mode .cta-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); /* Keep original gradient */
+    color: white;
+}
+
+.dark-mode .cta-buttons .btn-outline {
+    border-color: white;
+    color: white;
+}
+
+.dark-mode .cta-buttons .btn-outline:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+/* Footer */
+.dark-mode .footer {
+    background-color: #1a1e2e; /* Keep original footer background */
+    color: var(--light-color);
+}
+
+.dark-mode .footer-col p,
+.dark-mode .footer-col ul li a,
+.dark-mode .footer-links a,
+.dark-mode .footer-bottom {
+    color: #a0a8c0; /* Keep original footer text color */
+}
+
+.dark-mode .footer-col ul li a:hover,
+.dark-mode .footer-links a:hover {
+    color: white;
+}
+
+.dark-mode .footer-col i {
+    color: var(--accent-color); /* Keep vibrant accent */
+}
+
+.dark-mode .social-links a {
+    background-color: #2a3042;
+    color: white;
+}
+
+.dark-mode .social-links a:hover {
+    background-color: var(--primary-color);
+}
+
+/* Dark Mode Toggle */
+.dark-mode .dark-mode-toggle .fa-moon {
     opacity: 0;
-  }
-  to {
-    transform: translateX(-50%) translateY(0);
+}
+
+.dark-mode .dark-mode-toggle .fa-sun {
     opacity: 1;
-  }
-}
-
-/* Stylish Logout Button */
-#logoutBtn {
-  padding: 0.6rem 1.2rem;
-  font-weight: 600;
-  border: 2px solid #dc3545;
-  color: #dc3545;
-  background-color: transparent;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-}
-
-#logoutBtn:hover {
-  background-color: #dc3545;
-  color: white;
-  box-shadow: 0 8px 20px rgba(220, 53, 69, 0.2);
-  transform: translateY(-2px);
-}
-
-#logoutBtn i {
-  transition: transform 0.3s ease;
-}
-
-#logoutBtn:hover i {
-  transform: rotate(-20deg);
+    color: var(--primary-color); /* Vibrant sun icon */
 }
