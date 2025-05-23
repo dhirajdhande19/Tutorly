@@ -1610,3 +1610,79 @@ body.dark-mode {
     opacity: 1;
     color: var(--primary-color); /* Vibrant sun icon */
 }
+
+
+.flash-message {
+  position: fixed;
+  top: 90px; /* increased from 20px to 80px */
+  left: 50%;
+  transform: translateX(-50%) translateY(-30px);
+  opacity: 0;
+  z-index: 9999;
+  background-color: #28a745; /* green for success */
+  color: #fff;
+  padding: 16px 40px 16px 20px;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideFadeIn 0.5s ease-out forwards;
+  max-width: 90%;
+  width: max-content;
+}
+
+.flash-error {
+  background-color: #dc3545;
+}
+
+.flash-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+@keyframes slideFadeIn {
+  from {
+    transform: translateX(-50%) translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Stylish Logout Button */
+#logoutBtn {
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border: 2px solid #dc3545;
+  color: #dc3545;
+  background-color: transparent;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+#logoutBtn:hover {
+  background-color: #dc3545;
+  color: white;
+  box-shadow: 0 8px 20px rgba(220, 53, 69, 0.2);
+  transform: translateY(-2px);
+}
+
+#logoutBtn i {
+  transition: transform 0.3s ease;
+}
+
+#logoutBtn:hover i {
+  transform: rotate(-20deg);
+}
