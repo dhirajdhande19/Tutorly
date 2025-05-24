@@ -1,4 +1,55 @@
-<% layout('/layout/homeBoilerplate') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tutorly - AI-powered homework help and study companion. Get instant solutions, explanations, and learning resources for any subject, anytime.">
+    <title>Tutorly - AI Learning Companion</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="testimonials-swiper.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Tutorly</span>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="home.html" class="active">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#subjects">Subjects</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#testimonials">Success Stories</a></li>
+                </ul>
+            </nav>
+            
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Get Started</a>
+            </div>
+            
+            <button class="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -87,18 +138,16 @@
                             </div>
                         </li>
                     </ul>
-                    <a href="/chatroom">
-                        <button class="btn btn-outline btn-block">
-                            <i class="fas fa-plus"></i> New Chat
-                        </button>
-                    </a>
+                    <button class="btn btn-outline btn-block">
+                        <i class="fas fa-plus"></i> New Chat
+                    </button>
                 </div>
                 
                 <div class="chat-main">
                     <div class="chat-header">
                         <div class="chat-info">
                             <div class="avatar">
-                                <img src="/images/AI_Tutor_Bot.jpg" alt="AI Tutor">
+                                <img src="https://i.pinimg.com/736x/db/85/81/db858109c7c602f5fea1ab81a3b8741e.jpg" alt="AI Tutor">
                             </div>
                             <div>
                                 <h4>AI Tutor</h4>
@@ -279,7 +328,7 @@
             </div>
             
             <div class="text-center">
-                <a href="#" class="btn btn-primary">View All Subjects</a>
+                <a href="subject.html" class="btn btn-primary">View All Subjects</a>
             </div>
         </div>
     </section>
@@ -328,96 +377,136 @@
         </div>
     </section>
 
-    <!-- Study Resources Section -->
-    <section class="resources-section" id="resources">
-        <div class="container">
-            <div class="section-header">
-                <h2>Study Resources</h2>
-                <p>Comprehensive materials to boost your learning</p>
-            </div>
-            
-            <div class="resources-tabs">
-                <button class="tab-btn active">Video Lessons</button>
-                <button class="tab-btn">Practice Problems</button>
-                <button class="tab-btn">Study Guides</button>
-                <button class="tab-btn">Cheat Sheets</button>
-            </div>
-            
-            <div class="resources-content">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="resource-card">
-                                <div class="resource-image">
-                                    <img src=" /images/Maths-thumbnail.jpg" alt="Math Video">
-                                    <div class="play-button">
-                                        <i class="fas fa-play"></i>
-                                    </div>
-                                    <div class="duration">12:45</div>
-                                </div>
-                                <div class="resource-info">
-                                    <span class="subject-tag">Mathematics</span>
-                                    <h3>Understanding Calculus Limits</h3>
-                                    <p class="author">By Prof. Sarah Johnson</p>
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <span>4.7 (1,203)</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <div class="resources-tabs">
+        <button class="tab-btn active" data-tab="video-lessons">Video Lessons</button>
+        <button class="tab-btn" data-tab="practice-problems">Practice Problems</button>
+        <button class="tab-btn" data-tab="study-guides">Study Guides</button>
+        <button class="tab-btn" data-tab="cheat-sheets">Cheat Sheets</button>
+    </div>
 
-    <section class="testimonials-section" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>Success Stories</h2>
-                <p>What students say about Tutorly</p>
-            </div>
-            
-            <div class="testimonials-slider">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="testimonial-card">
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p class="testimonial-text">
-                                    "Tutorly helped me go from failing calculus to getting an A in just 3 months. The step-by-step explanations made complex concepts so much easier to understand."
-                                </p>
-                                <div class="student-info">
-                                    <img src="public\images\Student_pic.jpg" alt="Student" class="student-avatar">
-                                    <div>
-                                        <h4>Michael Chen</h4>
-                                        <p>University of California</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="swiper-pagination"></div>
-                </div>
+    <div class="resources-content">
+        <!-- Video Lessons Tab -->
+        <div class="tab-content active" id="video-lessons">
+            <div class="swiper video-swiper">
+                <div class="swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
-    </section>
+
+        <!-- Practice Problems Tab -->
+        <div class="tab-content" id="practice-problems">
+            <div class="swiper practice-swiper">
+                <div class="swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+
+        <!-- Study Guides Tab -->
+        <div class="tab-content" id="study-guides">
+            <div class="swiper guides-swiper">
+                <div class="swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+
+        <!-- Cheat Sheets Tab -->
+        <div class="tab-content" id="cheat-sheets">
+            <div class="swiper cheats-swiper">
+                <div class="swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal" id="video-modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <iframe id="video-frame" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+  <section class="testimonials-section" id="testimonials">
+  <div class="section-header">
+    <h2>Success Stories</h2>
+    <p>What students say about Tutorly</p>
+  </div>
+
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+          <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>"Tutorly helped me go from failing calculus to getting an A in just 3 months."</p>
+          <div class="student-info">
+            <img src="https://i.pinimg.com/736x/69/78/19/69781905dd57ba144ab71ca4271ab294.jpg" alt="Michael Chen">
+            <div>
+              <h4>Michael Chen</h4>
+              <span>University of California</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+          <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+          <p>"The practice problems on Tutorly were a game-changer for my physics exam prep!"</p>
+          <div class="student-info">
+            <img src="https://i.pinimg.com/736x/6d/24/50/6d245011a02d8414360752b23a14db33.jpg" alt="Sarah Patel">
+            <div>
+              <h4>Sarah Patel</h4>
+              <span>MIT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <div class="testimonial-card">
+          <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="far fa-star"></i>
+          </div>
+          <p>"Tutorly's cheat sheets saved me during finals. They're concise and effective."</p>
+          <div class="student-info">
+            <img src="https://i.pinimg.com/736x/42/34/d7/4234d71f5c4484f74a29da3b152d1170.jpg" alt="James Rodriguez">
+            <div>
+              <h4>James Rodriguez</h4>
+              <span>Stanford University</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination & Arrows -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <div class="text-center">
+    <a href="testimonial.html" class="btn">Give Your Review</a>
+  </div>
+</section>
 
     <!-- CTA Section -->
     <section class="cta-section">
@@ -426,10 +515,83 @@
                 <h2>Ready to Transform Your Learning?</h2>
                 <p>Join millions of students who are achieving better grades with Tutorly</p>
                 <div class="cta-buttons">
-                    <a href="/register" class="btn btn-primary btn-large">Get Started Free</a>
+                    <a href="register.html" class="btn btn-primary btn-large">Get Started Free</a>
                     <a href="#demo" class="btn btn-outline btn-large">See How It Works</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Tutorly</span>
+                    </div>
+                    <p>AI-powered learning companion helping students succeed in their academic journey.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="press.html">Press</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="help-center.html">Help Center</a></li>
+                        <li><a href="study-guides.html">Study Guides</a></li>
+                        <li><a href="practice-tests.html">Practice Tests</a></li>
+                        <li><a href="webinars.html">Webinars</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> support@tutorly.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Learning St, Edu City</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2023 Tutorly. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="sitemap.html">Sitemap</a>
+                    <a href="accessibility.html">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="homepage.js"></script>
+</body>
+</html>
