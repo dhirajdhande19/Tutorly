@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -190,32 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const flashMessages = document.querySelectorAll(".flash-message");
-
-  flashMessages.forEach(flash => {
-    const timeout = setTimeout(() => {
-      fadeOut(flash);
-    }, 3000);
-
-    const closeBtn = flash.querySelector(".flash-close");
-    if (closeBtn) {
-      closeBtn.addEventListener("click", () => {
-        clearTimeout(timeout);
-        fadeOut(flash);
-      });
-    }
-  });
-
-  function fadeOut(element) {
-    element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-    element.style.opacity = "0";
-    element.style.transform = "translateX(-50%) translateY(-20px)";
-    setTimeout(() => {
-      element.remove();
-    }, 500);
-  }
-});
 
 document.addEventListener('DOMContentLoaded', () => {
     // Dark Mode Toggle
@@ -235,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
-// Tab Switching
+    // Tab Switching
     const tabButtons = document.querySelectorAll('.resources-tabs .tab-btn');
     const tabContents = document.querySelectorAll('.resources-content .tab-content');
 

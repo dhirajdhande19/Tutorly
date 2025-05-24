@@ -1,0 +1,121 @@
+/* Add to existing home.css */
+
+/* Testimonial Submission Section */
+.testimonial-submit-section {
+    padding: 80px 0;
+}
+
+.testimonial-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--dark-color);
+    background-color: #f8f9fa;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    background-color: white;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 1.5rem;
+    color: #dee2e6;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #ffc107;
+}
+
+.testimonial-form .btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+/* Dark Mode for Testimonial Submission Section */
+.dark-mode .testimonial-submit-section {
+    background-color: #1a1a1a;
+}
+
+.dark-mode .testimonial-form {
+    background-color: #1e1e1e;
+    color: var(--light-color);
+}
+
+.dark-mode .form-group label {
+    color: var(--light-color);
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: var(--light-color);
+}
+
+.dark-mode .form-group input:focus,
+.dark-mode .form-group textarea:focus {
+    border-color: var(--primary-color);
+    background-color: #333;
+}
+
+.dark-mode .testimonial-submit-section .section-header h2 {
+    color: white;
+}
+
+.dark-mode .testimonial-submit-section .section-header p {
+    color: var(--gray-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .testimonial-form {
+        padding: 20px;
+    }
+}
