@@ -190,3 +190,72 @@
   margin-top: 2px;
   align-self: flex-end;
 }
+
+/* --- DARK MODE SUPPORT --- */
+body.dark-mode {
+  background: #181a1b;
+  color: #f1f1f1;
+}
+
+.dark-mode .header {
+  background: #23272f;
+  color: #f1f1f1;
+}
+
+.dark-mode .main-nav a {
+  color: #f1f1f1;
+}
+
+.dark-mode .main-nav a:hover,
+.dark-mode .main-nav a.active {
+  color: #4cc9f0;
+}
+
+.dark-mode .btn-primary {
+  background: #4895ef;
+  color: #fff;
+}
+
+.dark-mode .btn-outline {
+  border: 1px solid #f1f1f1;
+  color: #f1f1f1;
+}
+
+.dark-mode .chat-messages {
+  background: #23272f;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.dark-mode .user-message .message-content {
+  background: #2d3a3a;
+  color: #b9fbc0;
+}
+
+.dark-mode .bot-message .message-content {
+  background: #23272f;
+  color: #f1f1f1;
+}
+
+.dark-mode .message-time {
+  color: #aaa;
+}
+
+.dark-mode .flash-message {
+  background-color: #222e3c;
+  color: #fff;
+}
+
+.dark-mode .flash-error {
+  background-color: #b02a37;
+}
+
+.dark-mode #logoutBtn {
+  border-color: #b02a37;
+  color: #b02a37;
+  background: transparent;
+}
+
+.dark-mode #logoutBtn:hover {
+  background: #b02a37;
+  color: #fff;
+}
