@@ -33,6 +33,7 @@ async function main() {
 
 
 app.use(express.urlencoded({ extended: true })); // to accept data from form 
+app.use(express.json()); // to accept JSON bodies
 
 // Serve static assets (CSS, JS, images)
 app.use(express.static(path.join(__dirname, "public")));
@@ -117,7 +118,9 @@ app.get("/test", (req, res) => {
 // doing somthing (any work) if he's not logged in  !
 
 app.get('/chatroom',isLoggedIn, (req, res) => {
-    res.render("pages/chatroom");
+    res.render("pages/chatroom", {
+      openrouterKey: process.env.OPENROUTER_API_KEY
+    });
 });
 
 app.get("/logout", (req, res, next) => {

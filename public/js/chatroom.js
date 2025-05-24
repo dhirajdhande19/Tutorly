@@ -1,8 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Chat elements
     const input = document.querySelector('.chat-input input');
     const sendBtn = document.querySelector('.chat-input .btn-primary');
     const chatBox = document.querySelector('.chat-messages');
 
+    // Flash message logic
+    const flashMessages = document.querySelectorAll(".flash-message");
+    flashMessages.forEach(flash => {
+        const timeout = setTimeout(() => {
+            fadeOut(flash);
+        }, 3000);
+
+        const closeBtn = flash.querySelector(".flash-close");
+        if (closeBtn) {
+            closeBtn.addEventListener("click", () => {
+                clearTimeout(timeout);
+                fadeOut(flash);
+            });
+        }
+    });
+
+    function fadeOut(element) {
+        element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+        element.style.opacity = "0";
+        element.style.transform = "translateX(-50%) translateY(-20px)";
+        setTimeout(() => {
+            element.remove();
+        }, 500);
+    }
+
+    // Chat helpers
     const scrollToBottom = () => {
         chatBox.scrollTop = chatBox.scrollHeight;
     };
@@ -27,47 +54,67 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollToBottom();
     };
 
-    const sendMessage = () => {
+    // OPENROUTER.AI API Integration
+    async function fetchAIResponse(userMessage) {
+        try {
+            const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    model: 'openai/gpt-3.5-turbo',
+                    messages: [
+                        { role: 'system', content: 'You are a helpful assistant.' },
+                        { role: 'user', content: userMessage }
+                    ]
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error('AI API error');
+            }
+
+            const data = await response.json();
+            const aiText = data.choices?.[0]?.message?.content || "Sorry, I couldn't understand that.";
+            createMessage('bot', aiText);
+        } catch (error) {
+            createMessage('bot', "Sorry, there was a problem contacting the AI.");
+        }
+    }
+
+    // Send message logic
+    function sendMessage() {
         const msg = input.value.trim();
         if (!msg) return;
         createMessage('user', msg);
         input.value = '';
-
-        setTimeout(() => {
-            createMessage('bot', `This is a placeholder message for now whilst I route the rest of the application. You wanted to talk about "${msg}" maybe there are a few things we could cover with this!`);
-        }, 800);
-    };
+        fetchAIResponse(msg);
+    }
 
     sendBtn.addEventListener('click', sendMessage);
     input.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') sendMessage();
     });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-  const flashMessages = document.querySelectorAll(".flash-message");
+    // --- DARK MODE TOGGLE ---
+    const darkModeToggle = document.querySelector('.dark-mode-toggle');
+    const body = document.body;
 
-  flashMessages.forEach(flash => {
-    const timeout = setTimeout(() => {
-      fadeOut(flash);
-    }, 3000);
-
-    const closeBtn = flash.querySelector(".flash-close");
-    if (closeBtn) {
-      closeBtn.addEventListener("click", () => {
-        clearTimeout(timeout);
-        fadeOut(flash);
-      });
+    // On load, apply saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
     }
-  });
 
-  function fadeOut(element) {
-    element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-    element.style.opacity = "0";
-    element.style.transform = "translateX(-50%) translateY(-20px)";
-    setTimeout(() => {
-      element.remove();
-    }, 500);
-  }
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
 });
-
