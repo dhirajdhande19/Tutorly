@@ -774,208 +774,144 @@ img {
     font-size: 0.9rem;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-}
-
 /* Resources Section */
 .resources-tabs {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
-}
-
-.tab-btn {
-    padding: 10px 20px;
-    margin: 0 5px;
-    border: none;
-    background: #e0e0e0;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.tab-btn.active {
-    background: #007bff;
-    color: white;
-}
-
-.tab-btn:hover {
-    background: #0056b3;
-    color: white;
-}
-
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .resource-card {
-    background: white;
-    border-radius: 8px;
+    background-color: white;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    cursor: pointer;
-    border: 1px solid #e0e0e0; /* Added subtle border for better separation */
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .resource-image {
     position: relative;
-    width: 100%;
-    height: 150px;
+    height: 200px;
+    overflow: hidden;
 }
 
 .resource-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: var(--transition);
 }
 
-.play-button, .duration, .problem-count, .guide-pages, .sheet-type {
-    position: absolute;
-    color: white;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 5px 10px;
-    border-radius: 3px;
+.resource-card:hover .resource-image img {
+    transform: scale(1.05);
+}
+.video-thumbnail {
+    position: relative;
+    width: 300px; /* You can also use % or responsive units */
+    height: 300px; /* Ensures a perfect square */
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents distortion, keeps it pretty */
+    border-radius: 16px;
 }
 
 .play-button {
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
-.duration, .problem-count, .guide-pages, .sheet-type {
+.duration {
+    position: absolute;
     bottom: 10px;
     right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
 }
 
 .resource-info {
-    padding: 15px;
-    flex-grow: 1;
+    padding: 20px;
 }
 
 .subject-tag {
     display: inline-block;
-    background: #28a745;
-    color: white;
-    padding: 3px 8px;
-    border-radius: 3px;
-    font-size: 12px;
+    padding: 3px 10px;
+    background-color: #e0e7ff;
+    color: var(--primary-color);
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 500;
     margin-bottom: 10px;
 }
 
 .resource-info h3 {
-    margin: 0 0 10px;
-    font-size: 18px;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
 }
 
 .author {
-    color: #666;
-    font-size: 14px;
+    font-size: 0.8rem;
+    color: var(--gray-color);
     margin-bottom: 10px;
 }
 
-.rating, .difficulty, .downloads {
-    font-size: 14px;
-    color: #333;
+.rating {
+    color: #ffc107;
+    font-size: 0.9rem;
 }
 
-.rating i, .difficulty i {
-    color: #f1c40f;
+.rating span {
+    color: var(--gray-color);
+    margin-left: 5px;
 }
 
 .swiper-container {
+    width: 100%;
     padding: 20px 0;
 }
 
-.swiper-button-next, .swiper-button-prev {
-    color: #007bff;
-}
-
-.swiper-pagination-bullet-active {
-    background: #007bff;
-}
-
 .swiper-slide {
-    width: 320px; /* Consistent width for cards */
-    margin-right: 20px; /* Matches reduced spaceBetween */
+    padding: 0 15px;
 }
 
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9); /* Increased opacity for darker overlay */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
+.swiper-pagination {
     position: relative;
-    width: 80%;
-    max-width: 800px;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
+    margin-top: 30px;
 }
 
-.close-modal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-    background: rgba(255, 0, 0, 0.7); /* Changed to red for better visibility */
-    padding: 5px 10px;
-    border-radius: 50%;
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary-color);
 }
 
-.modal iframe {
-    width: 100%;
-    height: 450px;
-}
-
-@media (max-width: 768px) {
-    .tab-btn {
-        padding: 8px 12px;
-        font-size: 14px;
-    }
-
-    .resource-card {
-        max-width: 100%;
-    }
-
-    .resource-image {
-        height: 120px;
-    }
-
-    .modal iframe {
-        height: 300px;
-    }
-
-    .swiper-slide {
-        width: 280px; /* Adjusted width for mobile */
-        margin-right: 20px; /* Matches reduced spaceBetween */
-    }
-}
+/* Testimonials Section */
 /* testimonial section */
 .testimonial-card {
   width: 420px;         /* bigger width */
@@ -1675,459 +1611,7 @@ body.dark-mode {
     color: var(--primary-color); /* Vibrant sun icon */
 }
 
-/* Resources Section */
-.resources-tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    gap: 15px;
-    flex-wrap: wrap;
-}
 
-.tab-btn {
-    padding: 10px 20px;
-    background: none;
-    border: none;
-    border-bottom: 2px solid transparent;
-    font-size: 16px;
-    font-weight: 500;
-    color: #666;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.tab-btn.active {
-    color: #3a5cff;
-    border-bottom: 2px solid #3a5cff;
-}
-
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-.swiper {
-    padding: 20px 0;
-}
-
-.resource-card {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    margin-bottom: 20px;
-}
-
-.resource-card:hover {
-    transform: translateY(-5px);
-}
-
-.resource-image {
-    position: relative;
-    height: 150px;
-    overflow: hidden;
-}
-
-.resource-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.play-button, .problem-count, .guide-pages, .sheet-type {
-    position: absolute;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-}
-
-.play-button {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    background: rgba(255,255,255,0.8);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #3a5cff;
-    font-size: 16px;
-}
-
-.problem-count, .guide-pages, .sheet-type {
-    bottom: 10px;
-    right: 10px;
-}
-
-.resource-info {
-    padding: 15px;
-}
-
-.subject-tag {
-    display: inline-block;
-    background: #f0f4ff;
-    color: #3a5cff;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    margin-bottom: 8px;
-}
-
-.resource-info h3 {
-    margin: 5px 0;
-    font-size: 18px;
-}
-
-.author {
-    color: #666;
-    font-size: 14px;
-    margin: 5px 0;
-}
-
-.rating, .difficulty, .downloads {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-.rating {
-    color: #ffc107;
-}
-
-.rating span, .difficulty span, .downloads span {
-    color: #666;
-    margin-left: 5px;
-}
-
-.difficulty .stars {
-    margin-left: 5px;
-    color: #ffc107;
-}
-
-.downloads i {
-    color: #3a5cff;
-    margin-right: 5px;
-}
-
-/* Swiper Navigation */
-.swiper-button-next, 
-.swiper-button-prev {
-    color: #3a5cff;
-    background: rgba(255,255,255,0.8);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.swiper-button-next::after, 
-.swiper-button-prev::after {
-    font-size: 20px;
-}
-
-.swiper-pagination-bullet-active {
-    background: #3a5cff;
-}
-
-/* Dark Mode Styles */
-body.dark-mode .resource-card {
-    background: #1e1e1e;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-body.dark-mode .resource-info h3 {
-    color: #fff;
-}
-
-body.dark-mode .author {
-    color: #aaa;
-}
-
-body.dark-mode .rating span,
-body.dark-mode .difficulty span,
-body.dark-mode .downloads span {
-    color: #aaa;
-}
-
-body.dark-mode .subject-tag {
-    background: #252525;
-}
-
-body.dark-mode .tab-btn {
-    color: #aaa;
-}
-
-body.dark-mode .tab-btn.active {
-    color: #3a5cff;
-}
-
-
-/* Add to existing home.css */
-
-/* Resources Section */
-.resources-section {
-    padding: 80px 0;
-}
-
-.resources-tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.resources-tabs .tab-btn {
-    padding: 10px 20px;
-    background-color: var(--light-gray);
-    border: none;
-    border-radius: 50px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.resources-tabs .tab-btn.active {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.resources-tabs .tab-btn:hover {
-    background-color: var(--primary-dark);
-    color: white;
-}
-
-.resources-content {
-    margin-bottom: 40px;
-}
-
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-.resource-card {
-    background-color: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: var(--box-shadow);
-    transition: var(--transition);
-    max-width: 300px;
-    margin: 0 auto;
-}
-
-.resource-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.resource-image {
-    position: relative;
-    height: 150px;
-    overflow: hidden;
-}
-
-.resource-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.resource-card:hover .resource-image img {
-    transform: scale(1.05);
-}
-
-.play-button,
-.problem-count,
-.guide-pages,
-.sheet-type {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 3px 8px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-}
-
-.play-button {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-.resource-info {
-    padding: 20px;
-}
-
-.subject-tag {
-    display: inline-block;
-    padding: 3px 10px;
-    background-color: #e0e7ff;
-    color: var(--primary-color);
-    border-radius: 50px;
-    font-size: 0.7rem;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-.resource-info h3 {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    color: var(--dark-color);
-}
-
-.author {
-    font-size: 0.8rem;
-    color: var(--gray-color);
-    margin-bottom: 10px;
-}
-
-.rating,
-.difficulty,
-.downloads {
-    font-size: 0.9rem;
-}
-
-.rating i,
-.difficulty i {
-    color: #ffc107;
-}
-
-.rating span,
-.difficulty span,
-.downloads span {
-    color: var(--gray-color);
-    margin-left: 5px;
-}
-
-.downloads i {
-    color: var(--primary-color);
-    margin-right: 5px;
-}
-
-.difficulty .stars {
-    display: inline-block;
-    margin-left: 5px;
-}
-
-.swiper {
-    width: 100%;
-    padding: 20px 0;
-}
-
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-}
-
-.swiper-pagination {
-    position: relative;
-    margin-top: 20px;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    color: var(--primary-color);
-}
-
-/* Dark Mode for Resources Section */
-.dark-mode .resources-section {
-    background-color: #1a1a1a;
-}
-
-.dark-mode .resources-tabs .tab-btn {
-    background-color: #2a2a2a;
-    color: var(--light-color);
-}
-
-.dark-mode .resources-tabs .tab-btn.active {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.dark-mode .resources-tabs .tab-btn:hover {
-    background-color: var(--primary-dark);
-    color: white;
-}
-
-.dark-mode .resource-card {
-    background-color: #1e1e1e;
-    color: var(--light-color);
-}
-
-.dark-mode .resource-info h3 {
-    color: var(--light-color);
-}
-
-.dark-mode .resource-info .author,
-.dark-mode .rating span,
-.dark-mode .difficulty span,
-.dark-mode .downloads span {
-    color: var(--gray-color);
-}
-
-.dark-mode .subject-tag {
-    background-color: #2a3a5f;
-    color: var(--primary-color);
-}
-
-.dark-mode .play-button {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: var(--primary-color);
-}
-
-.dark-mode .problem-count,
-.dark-mode .guide-pages,
-.dark-mode .sheet-type {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-}
-
-.dark-mode .resources-section .section-header h2 {
-    color: white;
-}
-
-.dark-mode .resources-section .section-header p {
-    color: var(--gray-color);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-    .swiper {
-        padding: 10px 0;
-    }
-}
-
-@media (max-width: 576px) {
-    .resource-card {
-        max-width: 100%;
-    }
-=======
 .flash-message {
   position: fixed;
   top: 90px; /* increased from 20px to 80px */
