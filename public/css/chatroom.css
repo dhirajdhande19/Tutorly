@@ -191,6 +191,19 @@
   align-self: flex-end;
 }
 
+.chat-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 /* --- DARK MODE SUPPORT --- */
 body.dark-mode {
   background: #181a1b;

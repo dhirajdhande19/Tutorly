@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resourceTabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
             // Add logic to update resources content based on tab
-        });
+        }); 
     });
 
     // Chat Functionality
