@@ -613,6 +613,129 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+<<<<<<< HEAD
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize default testimonials if localStorage is empty
+  const initializeTestimonials = () => {
+    const defaultTestimonials = [
+      {
+        id: 1,
+        name: 'Michael Chen',
+        institution: 'University of California',
+        rating: 5,
+        feedback: 'Tutorly helped me go from failing calculus to getting an A in just 3 months.',
+        image: 'https://i.pinimg.com/736x/69/78/19/69781905dd57ba144ab71ca4271ab294.jpg',
+      },
+      {
+        id: 2,
+        name: 'Sarah Patel',
+        institution: 'MIT',
+        rating: 4.5,
+        feedback: 'The practice problems on Tutorly were a game-changer for my physics exam prep!',
+        image: 'https://i.pinimg.com/736x/6d/24/50/6d245011a02d8414360752b23a14db33.jpg',
+      },
+      {
+        id: 3,
+        name: 'James Rodriguez',
+        institution: 'Stanford University',
+        rating: 4,
+        feedback: "Tutorly's cheat sheets saved me during finals. They're concise and effective.",
+        image: 'https://i.pinimg.com/736x/42/34/d7/4234d71f5c4484f74a29da3b152d1170.jpg',
+      },
+    ];
+
+    // Check if testimonials exist in localStorage
+    if (!localStorage.getItem('testimonials')) {
+      localStorage.setItem('testimonials', JSON.stringify(defaultTestimonials));
+    }
+  };
+
+  // Initialize Swiper for testimonials
+  const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+
+  // Function to render testimonials
+  function renderTestimonials() {
+    const testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
+    const swiperWrapper = document.querySelector('.swiper-container .swiper-wrapper');
+
+    // Clear existing slides
+    swiperWrapper.innerHTML = '';
+
+    // Generate slides for all testimonials
+    testimonials.forEach((testimonial) => {
+      const slide = document.createElement('div');
+      slide.className = 'swiper-slide';
+      slide.innerHTML = `
+        <div class="testimonial-card">
+          <div class="rating">
+            ${generateStars(testimonial.rating)}
+          </div>
+          <p>"${testimonial.feedback}"</p>
+          <div class="student-info">
+            <img src="${testimonial.image}" alt="${testimonial.name}">
+            <div>
+              <h4>${testimonial.name}</h4>
+              <span>${testimonial.institution}</span>
+            </div>
+          </div>
+        </div>
+      `;
+      swiperWrapper.appendChild(slide);
+    });
+
+    // Update Swiper to reflect new slides
+    swiper.update();
+  }
+
+  // Function to generate star rating HTML
+  function generateStars(rating) {
+    let starsHTML = '';
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+
+    // Add full stars
+    for (let i = 0; i < fullStars; i++) {
+      starsHTML += '<i class="fas fa-star"></i>';
+    }
+
+    // Add half star if applicable
+    if (hasHalfStar) {
+      starsHTML += '<i class="fas fa-star-half-alt"></i>';
+    }
+
+    // Add empty stars to make up to 5
+    for (let i = fullStars + (hasHalfStar ? 1 : 0); i < 5; i++) {
+      starsHTML += '<i class="far fa-star"></i>';
+    }
+
+    return starsHTML;
+  }
+
+  // Initialize default testimonials and render on page load
+  initializeTestimonials();
+  renderTestimonials();
+=======
 document.addEventListener("DOMContentLoaded", () => {
   const flashMessages = document.querySelectorAll(".flash-message");
 
@@ -638,4 +761,5 @@ document.addEventListener("DOMContentLoaded", () => {
       element.remove();
     }, 500);
   }
+>>>>>>> ac44424edc7d7a3e18c4bd78147a5d70df5c4537
 });
