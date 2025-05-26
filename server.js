@@ -14,11 +14,14 @@ const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const ExpressError = require("./utils/ExpressError");
 const ejsMate = require("ejs-mate");
-const {isLoggedIn} = require("./middlewares");
+const methodOverride = require("method-override");
+const { isLoggedIn, isReviewAuthor } = require("./middlewares");
 // use wrapAsync from utils folder to async funtions / calls
+const Review = require("./models/Review");
+const { reviewSchema } = require("./Schema");
+const wrapAsync = require('./utils/wrapAsync');
+
 const app = express();
-
-
 const dbUrl = process.env.ATLASDB_URL;
 
 
@@ -69,6 +72,7 @@ const sessionOptions = {
 
 app.set("view engine", "ejs"); // Enable EJS
 app.engine('ejs', ejsMate);
+app.use(methodOverride("_method"));
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(session(sessionOptions));
@@ -90,12 +94,23 @@ app.use((req, res, next) => {
   next();
 });
 
+
+const validateReview = (req, res, next) => {
+  let { error } = reviewSchema.validate(req.body);
+  if(error) {
+    let errMsg = error.details.map((el) => el.message).join(",");
+    throw new ExpressError(404, errMsg);
+  } else {
+    next();
+  }
+};
+
+
 // Index Route
 app.get("/", (req, res) => {
     res.redirect("/home");
 });
 
-// Routes to Serve HTML files from views folder
 app.get("/register", (req, res) => {
   res.render("pages/register");
 });
@@ -104,15 +119,40 @@ app.get('/login', (req, res) => {
   res.render("pages/login");
 });
 
-app.get('/home', (req, res) => {
-    res.render("pages/home");
-});
- 
+app.get('/home', async (req, res) => {
+  const allReviews = await Review.find({});
 
-app.get("/test", (req, res) => {
-  req.flash("success", "You did it");
-  res.redirect("/home");
+  res.render("pages/home", { allReviews });
 });
+
+
+app.get("/subject", (req, res) => {
+  res.render("pages/subject");
+});
+
+
+// Reviews Routes
+app.get("/testimonial", (req, res) => {
+  res.render("pages/testimonial");
+});
+
+app.post("/testimonial", isLoggedIn, validateReview, wrapAsync(async (req, res) => {
+  const { name, institution, rating, feedback } = req.body;
+  const newReview = new Review({ name, institution, rating, feedback, author: req.user._id });
+  newReview.author = req.user._id;
+  await newReview.save();
+
+  req.flash("success", "Thanks for the feedback, legend! 🌟💬");
+  res.redirect("/home#testimonials");
+}));
+
+app.delete("/testimonial/:reviewId", isLoggedIn, isReviewAuthor, wrapAsync(async (req, res) => {
+  let { reviewId } = req.params;
+  await Review.findByIdAndDelete(reviewId);
+
+  req.flash("success", "Review erased ✨🧹");
+  res.redirect("/home#testimonials");
+}));
 
 // just use isLoggedIn middleware to restrict user for 
 // doing somthing (any work) if he's not logged in  !
@@ -152,6 +192,6 @@ app.use((err, req, res, next) => {
 
 
 // Start Server
-app.listen(2000, () => {
-    console.log("Server listening to 2000");
+app.listen(3000, () => {
+    console.log("Server listening to 3000");
 });
