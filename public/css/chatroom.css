@@ -113,6 +113,14 @@
   }
 }
 
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.slide-in {
+  animation: slideIn 0.5s;
+}
+
 /* Stylish Logout Button */
 #logoutBtn {
   padding: 0.6rem 1.2rem;
@@ -141,4 +149,113 @@
 
 #logoutBtn:hover i {
   transform: rotate(-20deg);
+}
+
+.chat-messages {
+  height: 350px;
+  overflow-y: auto;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+/* Optional: Style for messages */
+.message {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-message .message-content {
+  background: #d1e7dd;
+  color: #0f5132;
+  align-self: flex-end;
+  border-radius: 12px 12px 0 12px;
+  padding: 0.5rem 1rem;
+}
+
+.bot-message .message-content {
+  background: #e2e3e5;
+  color: #41464b;
+  align-self: flex-start;
+  border-radius: 12px 12px 12px 0;
+  padding: 0.5rem 1rem;
+}
+
+.message-time {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 2px;
+  align-self: flex-end;
+}
+
+/* --- DARK MODE SUPPORT --- */
+body.dark-mode {
+  background: #181a1b;
+  color: #f1f1f1;
+}
+
+.dark-mode .header {
+  background: #23272f;
+  color: #f1f1f1;
+}
+
+.dark-mode .main-nav a {
+  color: #f1f1f1;
+}
+
+.dark-mode .main-nav a:hover,
+.dark-mode .main-nav a.active {
+  color: #4cc9f0;
+}
+
+.dark-mode .btn-primary {
+  background: #4895ef;
+  color: #fff;
+}
+
+.dark-mode .btn-outline {
+  border: 1px solid #f1f1f1;
+  color: #f1f1f1;
+}
+
+.dark-mode .chat-messages {
+  background: #23272f;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.dark-mode .user-message .message-content {
+  background: #2d3a3a;
+  color: #b9fbc0;
+}
+
+.dark-mode .bot-message .message-content {
+  background: #23272f;
+  color: #f1f1f1;
+}
+
+.dark-mode .message-time {
+  color: #aaa;
+}
+
+.dark-mode .flash-message {
+  background-color: #222e3c;
+  color: #fff;
+}
+
+.dark-mode .flash-error {
+  background-color: #b02a37;
+}
+
+.dark-mode #logoutBtn {
+  border-color: #b02a37;
+  color: #b02a37;
+  background: transparent;
+}
+
+.dark-mode #logoutBtn:hover {
+  background: #b02a37;
+  color: #fff;
 }
