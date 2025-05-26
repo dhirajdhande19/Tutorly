@@ -1,9 +1,8 @@
-// const joi = require("joi");
+const joi = require("joi");
 
-// module.exports.userSchema = joi.object({
-//     name: joi.string().min(2).required(),
-//     email: joi.string().required(),
-//     password: joi.string().min(8).required(),
-//     confirm_password: joi.string().min(8).required(),
-//     terms: joi.string().required(),
-// });
+module.exports.reviewSchema = joi.object({
+    name: joi.string().min(2).required(),
+    institution: joi.string().required(),
+    rating: joi.number().min(1).max(5).required(),
+    feedback: joi.string().required(),
+});

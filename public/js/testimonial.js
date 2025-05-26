@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
 
+<<<<<<< HEAD
         // Validate file size (limit to 2MB before compression)
         if (file.size > 2 * 1024 * 1024) {
           alert('Image size must be less than 2MB.');
@@ -90,4 +91,39 @@ document.addEventListener('DOMContentLoaded', () => {
       form.reset();
     });
   });
+=======
+    // Testimonial Form Submission
+    const form = document.getElementById('testimonial-form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            // e.preventDefault();
+            
+            // const name = form.querySelector('#name').value.trim();
+            // const institution = form.querySelector('#institution').value.trim();
+            // const rating = form.querySelector('input[name="rating"]:checked')?.value;
+            // const feedback = form.querySelector('#feedback').value.trim();
+
+            // if (!rating) {
+            //     alert('Please select a rating.');
+            //     return;
+            // }
+
+            // // Log submission (replace with backend API call as needed)
+            // console.log('Testimonial Submitted:', {
+            //     name,
+            //     institution,
+            //     rating,
+            //     feedback
+            // });
+
+            // Show success message
+            // alert('Thank you for your testimonial! It will be reviewed and added soon.');
+
+            // Reset form
+            // form.reset();
+        });
+    } else {
+        console.warn('Testimonial form not found.');
+    }
+>>>>>>> ac44424edc7d7a3e18c4bd78147a5d70df5c4537
 });

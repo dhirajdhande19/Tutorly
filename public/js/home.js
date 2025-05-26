@@ -613,6 +613,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+<<<<<<< HEAD
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize default testimonials if localStorage is empty
@@ -734,4 +735,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize default testimonials and render on page load
   initializeTestimonials();
   renderTestimonials();
+=======
+document.addEventListener("DOMContentLoaded", () => {
+  const flashMessages = document.querySelectorAll(".flash-message");
+
+  flashMessages.forEach(flash => {
+    const timeout = setTimeout(() => {
+      fadeOut(flash);
+    }, 3000);
+
+    const closeBtn = flash.querySelector(".flash-close");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        clearTimeout(timeout);
+        fadeOut(flash);
+      });
+    }
+  });
+
+  function fadeOut(element) {
+    element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    element.style.opacity = "0";
+    element.style.transform = "translateX(-50%) translateY(-20px)";
+    setTimeout(() => {
+      element.remove();
+    }, 500);
+  }
+>>>>>>> ac44424edc7d7a3e18c4bd78147a5d70df5c4537
 });

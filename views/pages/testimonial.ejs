@@ -10,8 +10,14 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
+<<<<<<< HEAD
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="testimonial.css">
+=======
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/testimonial.css">
+
+>>>>>>> ac44424edc7d7a3e18c4bd78147a5d70df5c4537
 </head>
 <body>
     <!-- Header with Navigation -->
@@ -24,18 +30,24 @@
             
             <nav class="main-nav">
                 <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="home.html#features">Features</a></li>
-                    <li><a href="subjects.html">Subjects</a></li>
-                    <li><a href="home.html#resources">Resources</a></li>
-                    <li><a href="home.html#testimonials" class="active">Success Stories</a></li>
+                    <li><a href="/home" class="active">Home</a></li>
+                    <li><a href="/home#features">Features</a></li>
+                    <li><a href="/home#subjects">Subjects</a></li>
+                    <li><a href="/home#resources">Resources</a></li>
+                    <li><a href="/home#testimonials">Success Stories</a></li>
                 </ul>
             </nav>
             
             <div class="auth-buttons">
-                <a href="login.html" class="btn btn-outline">Login</a>
-                <a href="register.html" class="btn btn-primary">Get Started</a>
+                <% if(!currUser) { %>
+                <a href="/login" class="btn btn-outline">Login</a>
+                <a href="/register" class="btn btn-primary">Get Started</a>
+                <% } %> <% if(currUser) { %>
+                <a href="/logout" id="logoutBtn" class="btn btn-outline-danger fw-semibold">
+                    <i class="fas fa-sign-out-alt me-1"></i> Logout</a>
+                <% } %>
             </div>
+            
             
             <button class="dark-mode-toggle">
                 <i class="fas fa-moon"></i>
@@ -56,7 +68,7 @@
                 <p>Tell us how Tutorly helped you achieve your academic goals</p>
             </div>
             
-            <form id="testimonial-form" class="testimonial-form">
+            <form action="/testimonial" method="POST" id="testimonial-form" class="testimonial-form">
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -93,7 +105,7 @@
                     <textarea id="feedback" name="feedback" rows="6" placeholder="Share your experience with Tutorly" required></textarea>
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Submit Testimonial</button>
+                <button class="btn btn-primary">Submit Testimonial</button>
             </form>
         </div>
     </section>
@@ -168,7 +180,11 @@
     </footer>
 
     <!-- Main JS -->
+<<<<<<< HEAD
     <script src="testimonial.js"></script>
         <script src="homepage.js"></script>
+=======
+    <script src="/js/testimonial.js"></script>
+>>>>>>> ac44424edc7d7a3e18c4bd78147a5d70df5c4537
 </body>
 </html>
