@@ -34,8 +34,13 @@
             </nav>
             
             <div class="auth-buttons">
+                <% if(!currUser) { %>
                 <a href="/login" class="btn btn-outline">Login</a>
                 <a href="/register" class="btn btn-primary">Get Started</a>
+                <% } %> <% if(currUser) { %>
+                <a href="/logout" id="logoutBtn" class="btn btn-outline-danger fw-semibold">
+                    <i class="fas fa-sign-out-alt me-1"></i> Logout</a>
+                <% } %>
             </div>
             
             
