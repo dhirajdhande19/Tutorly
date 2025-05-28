@@ -15,45 +15,8 @@
 
 </head>
 <body>
-    <!-- Header with Navigation -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-graduation-cap"></i>
-                <span>Tutorly</span>
-            </div>
-            
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="/home" class="active">Home</a></li>
-                    <li><a href="/home#features">Features</a></li>
-                    <li><a href="/home#subjects">Subjects</a></li>
-                    <li><a href="/home#resources">Resources</a></li>
-                    <li><a href="/home#testimonials">Success Stories</a></li>
-                </ul>
-            </nav>
-            
-            <div class="auth-buttons">
-                <% if(!currUser) { %>
-                <a href="/login" class="btn btn-outline">Login</a>
-                <a href="/register" class="btn btn-primary">Get Started</a>
-                <% } %> <% if(currUser) { %>
-                <a href="/logout" id="logoutBtn" class="btn btn-outline-danger fw-semibold">
-                    <i class="fas fa-sign-out-alt me-1"></i> Logout</a>
-                <% } %>
-            </div>
-            
-            
-            <button class="dark-mode-toggle">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun"></i>
-            </button>
-            
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
+    <!-- Header with Navbar Section -->
+    <%- include("../includes/homeNavbar.ejs") %>
 
     <!-- Testimonial Submission Section -->
     <section class="testimonial-submit-section">
@@ -89,16 +52,6 @@
                         <label for="star1"><i class="fas fa-star"></i></label>
                     </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="gender">Gender</label>
-                    <select id="gender" name="gender" required>
-                        <option value="" disabled selected>Select your gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
 
                 <div class="form-group">
                     <label for="feedback">Your Feedback</label>
@@ -110,74 +63,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="logo">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Tutorly</span>
-                    </div>
-                    <p>AI-powered learning companion helping students succeed in their academic journey.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="press.html">Press</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="help-center.html">Help Center</a></li>
-                        <li><a href="study-guides.html">Study Guides</a></li>
-                        <li><a href="practice-tests.html">Practice Tests</a></li>
-                        <li><a href="webinars.html">Webinars</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">GDPR</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> support@tutorly.com</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Learning St, Edu City</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>© 2023 Tutorly. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="sitemap.html">Sitemap</a>
-                    <a href="accessibility.html">Accessibility</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Section -->
+    <%- include("../includes/footer.ejs") %>
 
     <!-- Main JS -->
     <script src="/js/testimonial.js"></script>

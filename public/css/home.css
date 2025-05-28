@@ -2301,11 +2301,17 @@ body.light-mode {
     margin-top: 1.3rem;
 }
 
-/* .testimonial-card img {
-    font-size: 7rem;
-} */
-
 .student-info img {
     margin-top: 0.5rem;
     font-size: 7rem;
+}
+
+/* Social media icons from footer */
+
+.social {
+    margin-left: 0.5rem;
+}
+
+#company {
+    margin-left: 1.5rem;
 }

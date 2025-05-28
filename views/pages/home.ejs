@@ -485,16 +485,7 @@
       </div>
       <p>"<%= review.feedback %>"</p>
       <div class="student-info">
-        <% let avatarUrl; %>
-        <% if (review.gender === 'male') { %>
-          <% avatarUrl = 'https://plus.unsplash.com/premium_vector-1720824711826-bdfbcc05cfe9?q=80&w=2268&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; %>
-        <% } else if (review.gender === 'female') { %>
-          <% avatarUrl = 'https://plus.unsplash.com/premium_vector-1720824711748-50e59cfd92b7?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; %>
-        <% } else { %>
-          <% avatarUrl = 'https://i.pinimg.com/736x/42/34/d7/4234d71f5c4484f74a29da3b152d1170.jpg'; %>
-        <% } %>
-
-        <img src="<%= avatarUrl %>" alt="<%= review.name %>">
+        <img src="https://i.pinimg.com/736x/69/78/19/69781905dd57ba144ab71ca4271ab294.jpg" alt="<%= review.name %>">
         <div>
           <h4><%= review.name %></h4>
           <span><%= review.institution %></span>

@@ -137,8 +137,8 @@ app.get("/testimonial", (req, res) => {
 });
 
 app.post("/testimonial", isLoggedIn, validateReview, wrapAsync(async (req, res) => {
-  const { name, institution, rating, feedback, gender } = req.body;
-  const newReview = new Review({ name, institution, rating, feedback, gender, author: req.user._id });
+  const { name, institution, rating, feedback} = req.body;
+  const newReview = new Review({ name, institution, rating, feedback, author: req.user._id });
   newReview.author = req.user._id;
   await newReview.save();
 
@@ -192,6 +192,6 @@ app.use((err, req, res, next) => {
 
 
 // Start Server
-app.listen(3000, () => {
-    console.log("Server listening to 3000");
+app.listen(5000, () => {
+    console.log("Server listening to 5000");
 });
