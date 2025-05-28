@@ -447,3 +447,33 @@ body {
 #logoutBtn:hover i {
   transform: rotate(-20deg);
 }
+
+/* Stylish Logout Button - Dark Mode */
+#logoutBtn {
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border: 2px solid #ff6b81; /* Softer red for dark backgrounds */
+  color: #ff6b81;
+  background-color: transparent;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+#logoutBtn:hover {
+  background-color: #ff6b81;
+  color: #1a1a1a; /* Dark text on light hover */
+  box-shadow: 0 8px 20px rgba(255, 107, 129, 0.25);
+  transform: translateY(-2px);
+}
+
+#logoutBtn i {
+  transition: transform 0.3s ease;
+}
+
+#logoutBtn:hover i {
+  transform: rotate(-20deg);
+}

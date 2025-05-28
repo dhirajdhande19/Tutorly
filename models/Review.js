@@ -11,6 +11,11 @@ const reviewSchema = new Schema ({
         max: 5,
     },
     feedback: String,
+    gender: {
+        type: String,
+        enum: ['male', 'female', 'other'],
+        required: true,
+  },
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",

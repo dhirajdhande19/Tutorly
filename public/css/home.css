@@ -40,9 +40,9 @@ body {
     padding: 0 20px;
 }
 
-section {
+/* section {
     padding: 80px 0;
-}
+} */
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
@@ -777,7 +777,6 @@ img {
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
     background-color: #f4f4f4;
 }
 
@@ -901,7 +900,7 @@ body {
 }
 
 .swiper-button-next, .swiper-button-prev {
-    color: #007bff;
+    display: none;
 }
 
 .swiper-pagination-bullet-active {
@@ -1539,8 +1538,7 @@ body.dark-mode {
 .dark-mode .subject-card p,
 .dark-mode .step-content p,
 .dark-mode .resource-info p,
-.dark-mode .testimonial-card p,
-.dark-mode .cta-content p {
+.dark-mode .testimonial-card p{
     color: var(--gray-color); /* Maintain gray for secondary text */
 }
 
@@ -1819,7 +1817,7 @@ body.dark-mode {
 }
 
 /* Swiper Navigation */
-.swiper-button-next, 
+/* .swiper-button-next, 
 .swiper-button-prev {
     color: #3a5cff;
     background: rgba(255,255,255,0.8);
@@ -1827,16 +1825,16 @@ body.dark-mode {
     height: 40px;
     border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+} */
 
-.swiper-button-next::after, 
+/* .swiper-button-next::after, 
 .swiper-button-prev::after {
     font-size: 20px;
 }
 
 .swiper-pagination-bullet-active {
     background: #3a5cff;
-}
+} */
 
 /* Dark Mode Styles */
 body.dark-mode .resource-card {
@@ -2050,10 +2048,10 @@ body.dark-mode .tab-btn.active {
     margin-top: 20px;
 }
 
-.swiper-button-next,
+/* .swiper-button-next,
 .swiper-button-prev {
     color: var(--primary-color);
-}
+} */
 
 /* Dark Mode for Resources Section */
 .dark-mode .resources-section {
@@ -2223,4 +2221,91 @@ body.dark-mode .tab-btn.active {
 .delete-btn:active {
   transform: scale(0.98);
   background-color: #cc0000;
+}
+
+
+/* Stylish Logout Button - Dark Mode */
+#logoutBtn {
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border: 2px solid #ff6b81; /* Softer red for dark backgrounds */
+  color: #ff6b81;
+  background-color: transparent;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+#logoutBtn:hover {
+  background-color: #ff6b81;
+  color: #1a1a1a; /* Dark text on light hover */
+  box-shadow: 0 8px 20px rgba(255, 107, 129, 0.25);
+  transform: translateY(-2px);
+}
+
+#logoutBtn i {
+  transition: transform 0.3s ease;
+}
+
+#logoutBtn:hover i {
+  transform: rotate(-20deg);
+}
+
+/* Light Mode */
+body.light-mode {
+  --accent-color: #e91e63; /* pink/red */
+}
+
+
+
+/* Review button */
+/* Shared Styles */
+.review-btn {
+  padding: 0.7rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  border: 2px solid var(--accent-color);
+  background-color: transparent;
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.review-btn:hover {
+  background-color: var(--accent-color);
+  color: white; /* Makes sure text is visible on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.gapp {
+    margin-top: 2rem;
+}
+
+.removeSpace {
+    justify-content: space-evenly;
+}
+
+.resource-card {
+    height: 350px;
+    width: 350px;
+}
+
+.testimonial-card p {
+    margin-top: 1.3rem;
+}
+
+/* .testimonial-card img {
+    font-size: 7rem;
+} */
+
+.student-info img {
+    margin-top: 0.5rem;
+    font-size: 7rem;
 }

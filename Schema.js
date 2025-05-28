@@ -5,4 +5,5 @@ module.exports.reviewSchema = joi.object({
     institution: joi.string().required(),
     rating: joi.number().min(1).max(5).required(),
     feedback: joi.string().required(),
+    gender: joi.string().required(),
 });
