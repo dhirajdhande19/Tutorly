@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -61,18 +59,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Subjects Tab Switching
-    const tabButtons = document.querySelectorAll('.subjects-tabs .tab-btn');
-    const subjectCategories = document.querySelectorAll('.subject-category');
+    const subjectTabButtons = document.querySelectorAll('.subjects-tabs .tab-btn');
+    const subjectCategories = document.querySelectorAll('.subjects-content .subject-category');
 
-    tabButtons.forEach(button => {
+    // Ensure only one .active per tab and category
+    subjectTabButtons.forEach((button, idx) => {
         button.addEventListener('click', () => {
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            subjectCategories.forEach(category => category.classList.remove('active'));
-
+            subjectTabButtons.forEach(btn => btn.classList.remove('active'));
+            subjectCategories.forEach(cat => cat.classList.remove('active'));
             button.classList.add('active');
-            const categoryIndex = Array.from(tabButtons).indexOf(button);
-            if (subjectCategories[categoryIndex]) {
-                subjectCategories[categoryIndex].classList.add('active');
+            if (subjectCategories[idx]) {
+                subjectCategories[idx].classList.add('active');
             }
         });
     });
